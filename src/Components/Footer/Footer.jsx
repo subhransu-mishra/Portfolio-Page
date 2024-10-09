@@ -73,7 +73,7 @@ const Footer = () => {
                 <FaLinkedin size={24} />
               </a>
               <a
-                href="https://www.linkedin.com/in/subhransu-sekhar-mishra/"
+                href="https://wa.me/917008207704"
                 className="text-black hover:text-primary-100"
               >
                 <IoLogoWhatsapp size={24} />
