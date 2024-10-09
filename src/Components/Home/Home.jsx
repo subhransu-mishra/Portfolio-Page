@@ -21,17 +21,17 @@ const Home = () => {
               Hi, I am Subhransu
             </h1>
             <div className="home-para">
-            <p className="text-black text-3xl mb-6 typewriter">
-              I'm a developer ,  passionate about building modern, responsive
-              websites and applications.
-            </p>
+              <p className="text-black text-3xl mb-6 typewriter">
+                I'm a developer , passionate about building modern, responsive
+                websites and applications.
+              </p>
             </div>
-            <button
+            <a
               className="px-6 py-2 bg-primary-100 text-white rounded-md hover:bg-black transition"
-              onClick={() => scrollToSection("contact_section")}
+              href="https://wa.me/917008207704"
             >
               Contact Me
-            </button>
+            </a>
           </div>
 
           {/* Right Side: Image in Circular Shape with Circular Background */}

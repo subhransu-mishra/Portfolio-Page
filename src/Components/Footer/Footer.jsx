@@ -3,6 +3,8 @@ import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { IoLogoGithub } from "react-icons/io";
 import { SiDiscord } from "react-icons/si";
 import { FaXTwitter } from "react-icons/fa6";
+import { IoLogoWhatsapp } from "react-icons/io";
+
 
 const Footer = () => {
   return (
@@ -71,6 +73,12 @@ const Footer = () => {
                 <FaLinkedin size={24} />
               </a>
               <a
+                href="https://www.linkedin.com/in/subhransu-sekhar-mishra/"
+                className="text-black hover:text-primary-100"
+              >
+                <IoLogoWhatsapp size={24} />
+              </a>
+              <a
                 href="https://discord.gg/My6Smu6X"
                 className="text-black hover:text-primary-100"
               >
@@ -82,12 +90,7 @@ const Footer = () => {
               >
                 <FaXTwitter size={24} />
               </a>
-              <a
-                href="https://www.facebook.com/subhransu.mishra.3367"
-                className="text-black hover:text-primary-100"
-              >
-                <FaFacebook size={24} />
-              </a>
+              
               <a
                 href="https://www.instagram.com/subhransumishra_/"
                 className="text-black hover:text-primary-100"

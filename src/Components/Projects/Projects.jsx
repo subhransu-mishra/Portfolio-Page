@@ -1,7 +1,7 @@
 import React from "react";
 import Slider from "react-slick"; // Import react-slick for carousel
 import { RiEarthFill } from "react-icons/ri";
-import { IoLogoGithub } from "react-icons/io";
+import { IoLogoGithub } from "react-icons/io5";
 
 
 // Import project images (replace with your actual image paths)
@@ -58,7 +58,7 @@ const Project = () => {
         Projects
       </h1>
       <p className="text-primary-100 flex justify-center pb-10 font-semibold">
-        (Projects that i have worked/contributed on)
+        (These are some recent projects I've worked on)
       </p>
       <div className="container mx-auto px-6 md:px-12" data-aos="slide-left">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
