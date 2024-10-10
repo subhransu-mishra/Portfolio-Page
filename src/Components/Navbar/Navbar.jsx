@@ -31,7 +31,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4 py-7 lg:py-5 flex justify-between items-center">
         {/* Logo Section */}
         <div className="text-2xl font-bold text-third-100 flex">
-          <a href="#" className="hover:text-secondary-100 text-4xl">
+          <a href="/home_section" className="hover:text-secondary-100 text-4xl">
             Portfolio 
           </a>
           <DiCodeigniter className="mt-2 ml-3 hover:text-secondary-100 cursor-pointer" />

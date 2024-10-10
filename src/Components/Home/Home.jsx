@@ -1,10 +1,12 @@
 import React from "react";
-// import "./Home.css";
+import { TypeAnimation } from "react-type-animation";
+import { BsChatTextFill } from "react-icons/bs";
 
 const Home = () => {
   const scrollToSection = (sectionId) => {
     document.getElementById(sectionId).scrollIntoView({ behavior: "smooth" });
   };
+
   return (
     <div>
       <div
@@ -17,21 +19,38 @@ const Home = () => {
             className="w-full md:w-1/2 mb-10 md:mb-0 text-center md:text-left"
             data-aos="slide-right"
           >
-            <h1 className="text-xl font-bold text-black mb-6 lg:text-4xl">
+            <h1 className="text-2xl font-bold text-black mb-6 lg:text-3xl">
               Hi, I am Subhransu
             </h1>
-            <div className="home-para">
-              <p className="text-black text-3xl mb-6 typewriter">
-                I'm a developer , passionate about building modern, responsive
-                websites and applications.
+            <div className="home-para mb-8">
+              <TypeAnimation
+                sequence={[
+                  "I am a Student.",
+                  1000,
+                  "I am a Web developer.",
+                  1000,
+                  "I am a Mobile app developer.",
+                  1000,
+                  
+                ]}
+                wrapper="span"
+                speed={50}
+                className="text-primary-100 text-3xl lg:text-3xl font-semibold whitespace-nowrap overflow-hidden ml-0"
+                repeat={Infinity}
+              />
+              <p className="text-black text-2xl lg:text-3xl mt-4">
+                Passionate about building modern, responsive websites and
+                applications.
               </p>
             </div>
-            <a
-              className="px-6 py-2 bg-primary-100 text-white rounded-md hover:bg-black transition"
-              href="https://wa.me/917008207704"
-            >
-              Contact Me
-            </a>
+            <div className="mx-24 lg:mx-0">
+              <a
+                className="flex justify-center w-40 gap-2 px-6 py-2 bg-primary-100 text-white rounded-md hover:bg-black transition text-lg font-semibold"
+                href="https://wa.me/917008207704"
+              >
+                Contact me <BsChatTextFill className="mt-1" />
+              </a>
+            </div>
           </div>
 
           {/* Right Side: Image in Circular Shape with Circular Background */}
