@@ -45,7 +45,7 @@ const Home = () => {
             </div>
             <div className="mx-24 lg:mx-0">
               <a
-                className="flex justify-center  gap-2 px-6 py-2 bg-primary-100 text-white rounded-md hover:bg-black transition text-lg font-normal"
+                className="flex justify-center md:w-40  gap-2 px-6 py-2 bg-primary-100 text-white rounded-md hover:bg-black transition text-lg font-normal"
                 href="https://wa.me/917008207704"
               >
                 Contact me <BsChatTextFill className="mt-1" />
