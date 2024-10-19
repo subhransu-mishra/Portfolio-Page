@@ -149,7 +149,7 @@ const Navbar = () => {
             Contact
           </button>
           <button
-            className="block px-4 py-2 text-third-100 text-sm font-semibold bg-secondary-100 w-32 rounded-lg mx-auto mb-3"
+            className="block px-4 py-2 text-black text-sm font-semibold bg-secondary-100 w-32 rounded-lg mx-auto mb-3"
             onClick={downloadCv}
           >
             Download CV

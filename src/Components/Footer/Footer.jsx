@@ -104,7 +104,7 @@ const Footer = () => {
         {/* Footer Bottom */}
         <div className="text-center mt-10 border-t border-gray-700 pt-6">
           <p className="text-black">
-            &copy; {new Date().getFullYear()} Subhransu Sekhar Mishra. All
+            &copy; {new Date().getFullYear()} subhransumishra . All
             rights reserved.
           </p>
         </div>
