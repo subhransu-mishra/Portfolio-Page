@@ -19,6 +19,13 @@ import project3Img1 from "/project-3-1.png";
 import project3Img2 from "/project-3-2.png";
 import project3Img3 from "/project-3-3.png";
 
+import project4Img1 from "/project-4-1.png";
+import project4Img2 from "/project-4-2.png";
+import project4Img3 from "/project-4-3.png";
+import project4Img4 from "/project-4-1.png";
+import project4Img5 from "/project-4-2.png";
+import project4Img6 from "/project-4-3.png";
+
 const projects = [
   {
     title: "Zomato Clone",
@@ -38,6 +45,12 @@ const projects = [
     websiteLink: "https://github.com/subhransu-mishra/nexus-news",
     githubLink: "https://github.com/subhransu-mishra/nexus-news",
   },
+  {
+    title: "E-Commerce Website (Under Development)",
+    images: [project4Img1, project4Img2, project4Img3, project4Img4, project4Img5, project4Img6],
+    websiteLink: "https://e-commercesubhransu.netlify.app/",
+    githubLink: "https://github.com/subhransu-mishra/nexus-news",
+  }
   // Add more projects here
 ];
 
