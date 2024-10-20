@@ -104,7 +104,7 @@ const Project = () => {
                     href={project.websiteLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-secondary-100 text-black px-4 py-2 rounded-lg hover:bg-yellow-500 transition duration-300 mx-5"
+                    className="bg-secondary-100 text-black px-4 py-2 rounded-lg hover:bg-black hover:text-white transition duration-300 mx-5"
                   >
                     Website
                   </a>
@@ -113,7 +113,7 @@ const Project = () => {
                     href={project.githubLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-secondary-100 text-black px-4 py-2 rounded-lg hover:bg-yellow-500 transition duration-300"
+                    className="bg-secondary-100 text-black px-4 py-2 rounded-lg hover:bg-black hover:text-white transition duration-300"
                   >
                     View on GitHub
                     

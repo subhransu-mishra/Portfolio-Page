@@ -28,7 +28,7 @@ const Navbar = () => {
 
   return (
     <nav className="shadow-md bg-primary-100">
-      <div className="container mx-auto px-4 py-7 lg:py-5 flex justify-between items-center">
+      <div className="container mx-auto px-10 py-7 lg:py-5 flex justify-between items-center">
         {/* Logo Section */}
         <div className="text-2xl font-bold text-third-100 flex">
           <a href="/home_section" className="hover:text-secondary-100 text-4xl">
@@ -41,38 +41,38 @@ const Navbar = () => {
         <div className="hidden md:flex items-center space-x-8">
           <button
             onClick={() => scrollToSection("home_section")}
-            className="text-third-100 hover:text-secondary-100 -ml-4 text-lg"
+            className="text-third-100 hover:text-secondary-100 font-medium -ml-4 text-lg"
           >
             Home
           </button>
           <button
             onClick={() => scrollToSection("about_section")}
-            className="text-third-100 hover:text-secondary-100 -ml-4 text-lg"
+            className="text-third-100 hover:text-secondary-100 font-medium -ml-4 text-lg"
           >
             About
           </button>
           <button
             onClick={() => scrollToSection("services_section")}
-            className="text-third-100 hover:text-secondary-100 -ml-4 text-lg"
+            className="text-third-100 hover:text-secondary-100 font-medium -ml-4 text-lg"
           >
             Services
           </button>
           <button
             onClick={() => scrollToSection("skills_section")}
-            className="text-third-100 hover:text-secondary-100 -ml-4 text-lg"
+            className="text-third-100 hover:text-secondary-100 font-medium -ml-4 text-lg"
           >
             Skills
           </button>
           <button
             onClick={() => scrollToSection("project_section")}
-            className="text-third-100 hover:text-secondary-100 -ml-4 text-lg"
+            className="text-third-100 hover:text-secondary-100 font-medium -ml-4 text-lg"
           >
             Projects
           </button>
           
           {/* Download CV Button */}
           <button
-            className="btn bg-secondary-100 text-black hover:bg-yellow-500 hover:text-white"
+            className="btn bg-secondary-100 text-black hover:bg-black hover:text-white"
             onClick={downloadCv}
           >
             Download CV

@@ -13,7 +13,7 @@ const Home = () => {
         className="min-h-screen flex items-center justify-center bg-secondary-100"
         id="home_section"
       >
-        <div className="container mx-auto px-6 py-12 flex flex-col md:flex-row items-center justify-between">
+        <div className="container mx-auto px-6 md:px-10 py-12 flex flex-col md:flex-row items-center justify-between">
           {/* Left Side: Text and Button */}
           <div
             className="w-full md:w-1/2 mb-10 md:mb-0 text-center md:text-left"
@@ -31,21 +31,20 @@ const Home = () => {
                   1000,
                   "I am a Mobile app developer.",
                   1000,
-                  
                 ]}
                 wrapper="span"
                 speed={50}
-                className="text-primary-100 text-3xl lg:text-3xl font-semibold whitespace-nowrap overflow-hidden ml-0"
+                className="text-primary-100 text-3xl lg:text-3xl font-semibold whitespace-nowrap overflow-hidden"
                 repeat={Infinity}
               />
-              <p className="text-black text-2xl lg:text-3xl mt-4">
+              <p className="text-black text-xl lg:text-2xl mt-4">
                 Passionate about building modern, responsive websites and
                 applications.
               </p>
             </div>
-            <div className="mx-24 lg:mx-0">
+            <div className="mx-auto md:mx-0">
               <a
-                className="flex justify-center md:w-40  gap-2 px-6 py-2 bg-primary-100 text-white rounded-md hover:bg-black transition text-lg font-normal"
+                className="flex items-center justify-center w-3/5 mx-auto md:mx-0  md:w-40 gap-2 py-2 bg-primary-100 text-white rounded-md hover:bg-black transition text-lg font-normal whitespace-nowrap"
                 href="https://wa.me/917008207704"
               >
                 Contact me <BsChatTextFill className="mt-1" />

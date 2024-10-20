@@ -20,7 +20,7 @@ const Service = () => {
             <h3 className="text-2xl font-bold text-third-100 text-center mb-4">
               Web Development
             </h3>
-            <p className="text-gray-400 text-center mb-6">
+            <p className="text-secondary-100 text-center mb-6">
               Offering full stack responsive and modern web development
               solutions using the latest MERN (MongoDB , Express js , React js ,
               Node js) technologies . Also opens for other tech stack
@@ -46,7 +46,7 @@ const Service = () => {
             <h3 className="text-2xl font-bold text-third-100 text-center mb-4">
               Application Development
             </h3>
-            <p className="text-gray-400 text-center mb-6">
+            <p className="text-secondary-100 text-center mb-6">
               Providing mobile app development services using frameworks like
               Flutter and React Native to create seamless and fast mobile
               applications across iOS , Android and desktop apps.
