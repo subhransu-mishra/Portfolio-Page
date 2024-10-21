@@ -34,7 +34,7 @@ const About = () => {
                 Education
               </h2>
               <p className="text-black text-sm">
-                Bachelor's of Science in ITM from B.J.B. Autonomous College
+                Bachelor's of Science in IT from B.J.B. Autonomous College
               </p>
             </div>
 
@@ -43,7 +43,7 @@ const About = () => {
               <FaCode className="text-3xl text-black mb-2" />
               <h2 className="text-xl font-semibold mb-2 text-black">Domain</h2>
               <p className="text-black text-sm">
-                Full Stack Web and App Development in MERN and Flutter
+                Software Development (Web and Application Development)
               </p>
             </div>
 
@@ -51,7 +51,7 @@ const About = () => {
             <div className="bg-secondary-100 w-52 p-6 shadow-lg rounded-lg text-center flex flex-col items-center border border-gray-300 mb-3">
               <BsFillBagFill className="text-3xl text-black mb-2" />
               <h2 className="text-xl font-semibold mb-2 text-black">
-                Projects
+                Experience
               </h2>
               <p className="text-black text-sm">
                 Worked over 25+ projects in the field of Software development
