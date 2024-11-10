@@ -17,6 +17,7 @@ import firebase from "/Firebase.png";
 import flutter from "/Flutter.png";
 import redux from "/Redux.png";
 import dart from "/dart.png";
+import mysql from "/mysql.png";
 
 // Import tools logos (assuming these logos are stored locally)
 import vscodeLogo from "/Vscode.png";
@@ -40,6 +41,7 @@ const Skills = () => {
     { name: "Node.js", logo: nodeLogo },
     { name: "Express", logo: express },
     { name: "MongoDB", logo: mongoDB },
+    { name: "MySQL", logo: mysql },
     { name: "Flutter", logo: flutter },
     { name: "Dart", logo: dart },
     { name: "Firebase", logo: firebase },

@@ -30,8 +30,8 @@ const Navbar = () => {
     <nav className="shadow-md bg-primary-100">
       <div className="container mx-auto px-10 py-7 lg:py-5 flex justify-between items-center">
         {/* Logo Section */}
-        <div className="text-2xl font-bold text-third-100 flex">
-          <a href="/home_section" className="hover:text-secondary-100 text-4xl">
+        <div className="text-2xl font-bold text-third-100 flex hover:text-black">
+          <a href="/home_section" className=" text-4xl">
             Portfolio 
           </a>
           <DiCodeigniter className="mt-2 ml-3 hover:text-secondary-100 cursor-pointer" />
