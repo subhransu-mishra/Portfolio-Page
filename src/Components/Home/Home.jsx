@@ -38,8 +38,7 @@ const Home = () => {
                 repeat={Infinity}
               />
               <p className="text-black text-xl lg:text-2xl mt-4">
-                Passionate about building modern, responsive websites and
-                applications.
+              Transforming ideas into interactive digital experiences, one line of code at a time
               </p>
             </div>
             <div className="mx-auto md:mx-0">
