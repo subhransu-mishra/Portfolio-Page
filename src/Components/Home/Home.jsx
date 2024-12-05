@@ -44,7 +44,7 @@ const Home = () => {
             <div className="mx-auto md:mx-0">
               <a
                 className="flex items-center justify-center w-3/5 mx-auto md:mx-0  md:w-40 gap-2 py-2 bg-primary-100 text-white rounded-md hover:bg-black transition text-lg font-normal whitespace-nowrap"
-                href="https://wa.me/917008207704"
+                href="mailto:work.subhransu@gmail.com"
               >
                 Let's Connect <BsChatTextFill className="mt-1" />
               </a>
