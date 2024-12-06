@@ -19,7 +19,6 @@ const Footer = () => {
             <p className="text-black mb-4">Let's Connect</p>
             <ul>
               <li className="mb-2">Email: work.subhransu@gmail.com</li>
-              <li className="mb-2">Phone: +91 7008207704</li>
               <li>Address: Bhubaneswar, Odisha</li>
             </ul>
           </div>
@@ -72,12 +71,7 @@ const Footer = () => {
               >
                 <FaLinkedin size={24} />
               </a>
-              <a
-                href="https://wa.me/917008207704"
-                className="text-black hover:text-primary-100"
-              >
-                <IoLogoWhatsapp size={24} />
-              </a>
+              
               <a
                 href="https://discord.gg/My6Smu6X"
                 className="text-black hover:text-primary-100"
