@@ -1,6 +1,8 @@
 import React from "react";
 import { TypeAnimation } from "react-type-animation";
 import { BsChatTextFill } from "react-icons/bs";
+import ShinyText from "../Ui_components/ShinyText";
+import { BlurText } from "../Ui_components/BlurText";
 
 const Home = () => {
   const scrollToSection = (sectionId) => {
@@ -20,7 +22,8 @@ const Home = () => {
             data-aos="slide-right"
           >
             <h1 className="text-2xl font-bold text-black mb-6 lg:text-3xl">
-              Hi, I am Subhransu
+            <BlurText text=" Hi, This is Subhransu" className="custom-class" delay={50} />
+           
             </h1>
             <div className="home-para mb-8">
               <TypeAnimation
@@ -38,7 +41,8 @@ const Home = () => {
                 repeat={Infinity}
               />
               <p className="text-black text-xl lg:text-2xl mt-4">
-              Transforming ideas into interactive digital experiences, one line of code at a time
+                Transforming ideas into interactive digital experiences, one
+                line of code at a time
               </p>
             </div>
             <div className="mx-auto md:mx-0">
@@ -46,7 +50,18 @@ const Home = () => {
                 className="flex items-center justify-center w-3/5 mx-auto md:mx-0  md:w-40 gap-2 py-2 bg-primary-100 text-white rounded-md hover:bg-black transition text-lg font-normal whitespace-nowrap"
                 href="mailto:work.subhransu@gmail.com"
               >
-                Let's Connect <BsChatTextFill className="mt-1" />
+                <ShinyText
+                  text="Let's Connect"
+                  disabled={false}
+                  speed={3}
+                  className="custom-class"
+                />
+                <ShinyText
+                  text={<BsChatTextFill className="mt-1" />}
+                  disabled={false}
+                  speed={3}
+                  className="custom-class"
+                />
               </a>
             </div>
           </div>

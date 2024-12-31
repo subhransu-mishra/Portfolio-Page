@@ -2,12 +2,18 @@ import React from "react";
 import { FaUserGraduate } from "react-icons/fa";
 import { BsFillBagFill } from "react-icons/bs";
 import { FaCode } from "react-icons/fa6";
+import ShinyText from "../Ui_components/ShinyText";
 
 const About = () => {
   return (
     <div className="bg-primary-100 py-16 lg:h-screen" id="about_section">
       <h1 className="text-secondary-100 text-4xl font-semibold flex justify-center pb-10">
-        About me
+      <ShinyText
+              text="About me"
+              disabled={false}
+              speed={3}
+              className="custom-class"
+            />
       </h1>
 
       {/* Main Content Section */}

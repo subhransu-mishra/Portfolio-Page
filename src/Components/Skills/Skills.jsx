@@ -1,5 +1,6 @@
 import React from "react";
 import "./../Skills/Skills.css";
+import ShinyText from "../Ui_components/ShinyText";
 
 // Import language logos (assuming these logos are stored locally)
 import cLogo from "/C.png";
@@ -59,7 +60,12 @@ const Skills = () => {
   return (
     <div className="bg-primary-100 py-16" id="skills_section">
       <h1 className="text-secondary-100 text-4xl md:text-5xl font-semibold flex justify-center pb-10">
-        Skills
+        <ShinyText
+          text="Skills"
+          disabled={false}
+          speed={3}
+          className="custom-class"
+        />
       </h1>
 
       <div className="container mx-auto px-6 md:px-12">
@@ -89,7 +95,12 @@ const Skills = () => {
       {/* Tools Section */}
       <div className="py-20">
         <h1 className="text-secondary-100 text-3xl  md:text-4xl font-semibold flex justify-center pb-10">
-          Tools
+        <ShinyText
+          text="Tools"
+          disabled={false}
+          speed={3}
+          className="custom-class"
+        />
         </h1>
 
         <div className="container mx-auto px-6 md:px-12">

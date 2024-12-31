@@ -1,17 +1,16 @@
 import React, { useState } from "react";
 import { DiCodeigniter } from "react-icons/di";
 import { MdFileDownload } from "react-icons/md";
+import ShinyText from "../Ui_components/ShinyText";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  // Function to scroll smoothly to a section by its ID
   const scrollToSection = (sectionId) => {
     document.getElementById(sectionId).scrollIntoView({ behavior: "smooth" });
     setMobileMenuOpen(false); // Close the mobile menu after clicking
   };
 
-  // Function to toggle mobile menu visibility
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
   };
@@ -27,14 +26,26 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="shadow-md bg-primary-100">
+    <nav className="fixed top-0 w-full bg-primary-100 bg-opacity-80 backdrop-blur-md z-50 shadow-md">
       <div className="container mx-auto px-10 py-7 lg:py-5 flex justify-between items-center">
         {/* Logo Section */}
         <div className="text-2xl font-bold text-third-100 flex hover:text-black">
           <a href="/home_section" className=" text-4xl">
-            Portfolio 
+            <ShinyText
+              text="Portfolio"
+              disabled={false}
+              speed={3}
+              className="custom-class"
+            />
           </a>
-          <DiCodeigniter className="mt-2 ml-3 hover:text-secondary-100 cursor-pointer" />
+          <ShinyText
+            text={
+              <DiCodeigniter className="mt-2 ml-3 hover:text-secondary-100 cursor-pointer" />
+            }
+            disabled={false}
+            speed={3}
+            className="custom-class"
+          />
         </div>
 
         {/* Desktop Nav Links */}
@@ -69,16 +80,17 @@ const Navbar = () => {
           >
             Projects
           </button>
-          
+
           {/* Download CV Button */}
-          <button
-            className="btn bg-secondary-100 text-black hover:bg-black hover:text-white"
-            onClick={downloadCv}
-          >
-            Download CV
+          <button className="btn" onClick={downloadCv}>
+            <ShinyText
+              text="Download CV"
+              disabled={false}
+              speed={3}
+              className="custom-class"
+            />
             <MdFileDownload />
           </button>
-          
         </div>
 
         {/* Mobile Menu Button */}
@@ -110,7 +122,7 @@ const Navbar = () => {
       {isMobileMenuOpen && (
         <div
           id="mobile-menu"
-          className="md:hidden bg-primary-100 flex flex-col justify-center"
+          className="md:hidden bg-primary-100 bg-opacity-80 backdrop-blur-md flex flex-col justify-center"
         >
           <button
             onClick={() => scrollToSection("home_section")}
@@ -148,11 +160,14 @@ const Navbar = () => {
           >
             Contact
           </button>
-          <button
-            className="block px-4 py-2 text-black text-sm font-semibold bg-secondary-100 w-32 rounded-lg mx-auto mb-3"
-            onClick={downloadCv}
-          >
-            Download CV
+          <button className="btn" onClick={downloadCv}>
+            <ShinyText
+              text="Download CV"
+              disabled={false}
+              speed={3}
+              className="custom-class"
+            />
+            <MdFileDownload />
           </button>
         </div>
       )}

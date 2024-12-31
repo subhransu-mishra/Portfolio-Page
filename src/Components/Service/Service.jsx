@@ -34,6 +34,19 @@ const Service = () => {
               </a>
             </div>
           </div>
+          {/* <SpotlightCard
+            className="custom-spotlight-card"
+            spotlightColor="rgba(0, 229, 255, 0.2)"
+          >
+            <i class="fa fa-lock"></i>
+            <h2>Web Development</h2>
+            <p>
+            Offering full stack responsive and modern web development
+              solutions using the latest MERN (MongoDB , Express js , React js ,
+              Node js) technologies . Also opens for other tech stack
+            </p>
+            <button> Build Now</button>
+          </SpotlightCard> */}
 
           {/* Application Development Card */}
           <div
@@ -60,6 +73,19 @@ const Service = () => {
               </a>
             </div>
           </div>
+        {/* <SpotlightCard
+            className="custom-spotlight-card"
+            spotlightColor="rgba(0, 229, 255, 0.2)"
+          >
+            <i class="fa fa-lock"></i>
+            <h2>Enhanced Security</h2>
+            <p>
+              Our state of the art software offers peace of mind through the
+              strictest security measures.
+            </p>
+            <button>Learn more</button>
+          </SpotlightCard> */}
+
         </div>
       </div>
     </div>

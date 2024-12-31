@@ -2,7 +2,7 @@ import React from "react";
 import Slider from "react-slick"; // Import react-slick for carousel
 import { RiEarthFill } from "react-icons/ri";
 import { IoLogoGithub } from "react-icons/io5";
-
+import ShinyText from "../Ui_components/ShinyText";
 
 // Import project images (replace with your actual image paths)
 import project1Img1 from "/project-1-1.png";
@@ -81,7 +81,12 @@ const Project = () => {
               className="bg-primary-100 shadow-lg rounded-lg p-6"
             >
               <h2 className="text-2xl font-semibold mb-4 text-third-100">
-                {project.title}
+              <ShinyText
+            text={project.title}
+            disabled={false}
+            speed={3}
+            className="custom-class"
+          />
               </h2>
 
               {/* Carousel for project images */}
@@ -106,7 +111,7 @@ const Project = () => {
                     rel="noopener noreferrer"
                     className="bg-secondary-100 text-black px-4 py-2 rounded-lg hover:bg-black hover:text-white transition duration-300 mx-5"
                   >
-                    Website
+                    Visit Website
                   </a>
                   
                   <a

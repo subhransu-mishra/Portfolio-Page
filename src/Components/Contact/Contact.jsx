@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-
+import React, { useState } from "react";
+import ShinyText from "../Ui_components/ShinyText";
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
+    name: "",
+    email: "",
+    message: "",
   });
 
   const handleChange = (e) => {
@@ -16,25 +16,42 @@ const Contact = () => {
     // Handle form submission logic here
     console.log(formData);
     setFormData({
-      name: '',
-      email: '',
-      message: ''
+      name: "",
+      email: "",
+      message: "",
     });
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-primary-100 relative" id='contact_section'>
+    <div
+      className="flex justify-center items-center min-h-screen bg-primary-100 relative"
+      id="contact_section"
+    >
       {/* Decorative Circles */}
       <div className="absolute top-0 left-0 w-32 h-32 opacity-30 rounded-full mix-blend-multiply filter blur-2xl animate-pulse"></div>
       <div className="absolute bottom-0 right-0 w-64 h-64 opacity-30 rounded-full mix-blend-multiply filter blur-2xl animate-pulse"></div>
 
       <div className="relative z-10 w-full max-w-lg shadow-2xl rounded-lg p-8 backdrop-blur-lg bg-opacity-60">
-        <h2 className="text-3xl font-bold text-center text-secondary-100 mb-6">Get in Touch</h2>
-        <p className="text-center text-third-100 mb-8">Feel free to reach out to me by filling the form below!</p>
+        <h2 className="text-3xl font-bold text-center text-secondary-100 mb-6">
+          <ShinyText
+            text="Get in Touch"
+            disabled={false}
+            speed={3}
+            className="custom-class"
+          />
+        </h2>
+        <p className="text-center text-third-100 mb-8">
+          Feel free to reach out to me by filling the form below!
+        </p>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label className="block text-lg font-semibold text-third-100 mb-2" htmlFor="name">Your Name</label>
+            <label
+              className="block text-lg font-semibold text-third-100 mb-2"
+              htmlFor="name"
+            >
+              Your Name
+            </label>
             <input
               type="text"
               name="name"
@@ -46,7 +63,12 @@ const Contact = () => {
             />
           </div>
           <div>
-            <label className="block text-lg font-semibold text-third-100 mb-2" htmlFor="email">Your Email</label>
+            <label
+              className="block text-lg font-semibold text-third-100 mb-2"
+              htmlFor="email"
+            >
+              Your Email
+            </label>
             <input
               type="email"
               name="email"
@@ -58,7 +80,12 @@ const Contact = () => {
             />
           </div>
           <div>
-            <label className="block text-lg font-semibold text-third-100 mb-2" htmlFor="message">Your Message</label>
+            <label
+              className="block text-lg font-semibold text-third-100 mb-2"
+              htmlFor="message"
+            >
+              Your Message
+            </label>
             <textarea
               name="message"
               id="message"
