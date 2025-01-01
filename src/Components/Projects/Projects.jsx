@@ -111,7 +111,7 @@ const Project = () => {
                     rel="noopener noreferrer"
                     className="bg-secondary-100 text-black px-4 py-2 rounded-lg hover:bg-black hover:text-white transition duration-300 mx-5"
                   >
-                    Visit Website
+                    Website
                   </a>
                   
                   <a

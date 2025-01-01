@@ -82,7 +82,7 @@ const Navbar = () => {
           </button>
 
           {/* Download CV Button */}
-          <button className="btn" onClick={downloadCv}>
+          <button className="btn bg-black" onClick={downloadCv}>
             <ShinyText
               text="Download CV"
               disabled={false}
@@ -122,7 +122,9 @@ const Navbar = () => {
       {isMobileMenuOpen && (
         <div
           id="mobile-menu"
-          className="md:hidden bg-primary-100 bg-opacity-80 backdrop-blur-md flex flex-col justify-center"
+          className={`md:hidden bg-primary-100 bg-opacity-80 backdrop-blur-md flex flex-col justify-center z-50 shadow-md fixed w-full transition-all duration-300 ease-in-out ${
+            isMobileMenuOpen ? "translate-y-0" : "-translate-y-full"
+          }`}
         >
           <button
             onClick={() => scrollToSection("home_section")}
@@ -160,14 +162,22 @@ const Navbar = () => {
           >
             Contact
           </button>
-          <button className="btn" onClick={downloadCv}>
+          <button
+            className="btn bg-transparent border-none"
+            onClick={downloadCv}
+          >
             <ShinyText
               text="Download CV"
               disabled={false}
               speed={3}
               className="custom-class"
             />
-            <MdFileDownload />
+            <ShinyText
+              text={<MdFileDownload />}
+              disabled={false}
+              speed={3}
+              className="custom-class"
+            />
           </button>
         </div>
       )}
