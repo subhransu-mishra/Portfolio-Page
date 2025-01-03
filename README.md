@@ -51,13 +51,16 @@ Hi, I'm Subhransu Sekhar Mishra, a passionate developer skilled in web technolog
    ```bash
    git clone https://github.com/subhransu-mishra/Portfolio-Page
    
-2. **Navigate to the Directory::**
-   cd portfolio
+2. **Navigate to the Directory:**
+    ```bash
+    cd portfolio
    
-3. **Install Dependencies:**
+4. **Install Dependencies:**
+     ```bash
    npm install
    
-5. **Run the Development Server**
+6. **Run the Development Server**
+   ```bash
    npm run dev
 
 🌟 Projects Highlighted in the Portfolio
