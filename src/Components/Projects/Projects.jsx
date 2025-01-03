@@ -1,7 +1,6 @@
 import React from "react";
 import Slider from "react-slick"; // Import react-slick for carousel
-import { RiEarthFill } from "react-icons/ri";
-import { IoLogoGithub } from "react-icons/io5";
+import GradientText from "../Ui_components/GradiantText";
 import ShinyText from "../Ui_components/ShinyText";
 
 // Import project images (replace with your actual image paths)
@@ -67,8 +66,15 @@ const Project = () => {
 
   return (
     <div className="py-16 bg-secondary-100" id="project_section">
-      <h1 className="text-primary-100 text-4xl font-semibold flex justify-center">
-        Projects
+      <h1 className="text-primary-100 text-4xl font-semibold flex justify-center lg:text-5xl">
+        <GradientText
+                          colors={["#220088", "#4079ff", "#000000"]}
+                          animationSpeed={3}
+                          showBorder={false}
+                          className="custom-class"
+                        >
+                          Projects
+                        </GradientText>
       </h1>
       <p className="text-primary-100 flex justify-center pb-10 font-semibold">
         (These are some recent projects I've worked on)
