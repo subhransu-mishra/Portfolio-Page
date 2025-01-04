@@ -1,34 +1,44 @@
-.home-para{
-    display: inline-block;
+.home-para {
+  display: inline-block;
 }
-.typewriter{
-   border-right: 5px solid;
-   width: 100%;
-   white-space: nowrap;
-   overflow: hidden;
-   animation: typing 2s steps(18), blink-caret 0.5s step-end infinite alternate;
+.typewriter {
+  border-right: 5px solid;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 2s steps(18), blink-caret 0.5s step-end infinite alternate;
 }
 @keyframes cursor {
-    50% { border-color: transparent; }
+  50% {
+    border-color: transparent;
+  }
 }
 @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 @keyframes gradient-border {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
+  0% {
+    background-position: 0% 50%;
   }
-  
-  .animate-gradient-border {
-    background-size: 200% 200%;
-    animation: gradient-border 6s linear infinite;
+  50% {
+    background-position: 100% 50%;
   }
-  
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient-border {
+  background-size: 200% 200%;
+  animation: gradient-border 6s linear infinite;
+}
+
+.custom-class {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}

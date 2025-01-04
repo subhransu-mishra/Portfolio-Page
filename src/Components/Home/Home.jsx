@@ -1,5 +1,4 @@
 import React from "react";
-import { TypeAnimation } from "react-type-animation";
 import { BsChatTextFill } from "react-icons/bs";
 import ShinyText from "../Ui_components/ShinyText";
 import { BlurText } from "../Ui_components/BlurText";
@@ -30,13 +29,14 @@ const Home = () => {
                 delay={50}
               />
             </h1>
+
             <div className="home-para mb-8">
-              <h1 className="text-3xl sm:text-3xl md:text-4xl font-bold mb-6 lg:text-6xl">
+              <h1 className="text-3xl sm:text-3xl md:text-4xl font-bold mb-6 lg:text-6xl md:pl-0">
                 <GradientText
                   colors={["#220088", "#4079ff", "#000000"]}
                   animationSpeed={3}
                   showBorder={false}
-                  className="custom-class"
+                  className="custom-class !ml-0" // Added !ml-0 to force remove any margin
                 >
                   Web and Mobile App Dev
                 </GradientText>
@@ -46,6 +46,7 @@ const Home = () => {
                 line of code at a time
               </p>
             </div>
+
             <div className="mx-auto md:mx-0">
               <a
                 className="flex items-center justify-center w-3/5 mx-auto md:mx-0 md:w-40 gap-2 py-2 bg-primary-100 text-white rounded-md hover:bg-black transition text-lg font-normal whitespace-nowrap"
