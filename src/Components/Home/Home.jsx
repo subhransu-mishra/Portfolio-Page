@@ -22,10 +22,10 @@ const Home = () => {
             className="w-full md:w-1/2 mb-10 md:mb-0 text-center md:text-left"
             data-aos="slide-right"
           >
-            <h1 className="text-lg sm:text-2xl font-bold text-black mb-6 lg:text-3xl">
+            <h1 className="text-lg  font-bold text-gray-700 mb-6 lg:text-3xl">
               <BlurText
                 text=" Hi, This is Subhransu"
-                className="custom-class"
+                className="custom-class text-3xl md:text-4xl md:font-semibold"
                 delay={50}
               />
             </h1>
@@ -36,7 +36,7 @@ const Home = () => {
                   colors={["#220088", "#4079ff", "#000000"]}
                   animationSpeed={3}
                   showBorder={false}
-                  className="custom-class !ml-0" // Added !ml-0 to force remove any margin
+                  className="custom-class" // Added !ml-0 to force remove any margin
                 >
                   Web and Mobile App Dev
                 </GradientText>
