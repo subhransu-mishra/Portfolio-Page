@@ -20,3 +20,29 @@
   animation: gradient-border 6s linear infinite;
 }
 
+.home-para h1 {
+  margin-left: 0 !important;  /* Remove any unintended left margin */
+  padding-left: 0 !important;
+  text-align: left; /* Ensure text alignment */
+  width: 100%;
+}
+
+.home-para {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers text properly */
+  justify-content: center;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .home-para {
+    align-items: flex-start; /* Ensures left alignment on larger screens */
+    text-align: left;
+  }
+}
+* {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+

@@ -25,7 +25,32 @@ import project4Img4 from "/project-4-1.png";
 import project4Img5 from "/project-4-2.png";
 import project4Img6 from "/project-4-3.png";
 
+import project5Img1 from "/project-5-1.png";
+import project5Img2 from "/project-5-2.png";
+import project5Img3 from "/project-5-3.png";
+import project5Img4 from "/project-5-4.png";
+import project5Img5 from "/project-5-5.png";
+import project5Img6 from "/project-5-6.png";
+
+import project6Img1 from "/project-6-1.png";
+import project6Img2 from "/project-6-2.png";
+import project6Img3 from "/project-6-3.png";
+
+
+
 const projects = [
+  {
+    title: "Prompt to image generator",
+    images: [project5Img1, project5Img2, project5Img3, project5Img4,project5Img5,project5Img6],
+    websiteLink: "https://github.com/subhransu-mishra/text-image-generator",
+    githubLink: "https://github.com/subhransu-mishra/text-image-generator",
+  },
+  {
+    title: "AI Recipe Generator using GPT-3 Model",
+    images: [project6Img1,project6Img2,project6Img3],
+    websiteLink: "https://github.com/subhransu-mishra/Recipe-Generator",
+    githubLink: "https://github.com/subhransu-mishra/Recipe-Generator",
+  },
   {
     title: "Zomato Clone",
     images: [project1Img1, project1Img2, project1Img3, project1Img4],

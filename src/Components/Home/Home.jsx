@@ -31,12 +31,14 @@ const Home = () => {
             </h1>
 
             <div className="home-para mb-8">
-              <h1 className="text-3xl sm:text-3xl md:text-4xl font-bold mb-6 lg:text-6xl md:pl-0">
+              {/* Removed md:pl-0 from this heading */}
+              <h1 className="text-3xl sm:text-3xl md:text-4xl font-bold mb-6 lg:text-6xl w-full text-center md:text-left leading-tight">
+
                 <GradientText
                   colors={["#220088", "#4079ff", "#000000"]}
                   animationSpeed={3}
                   showBorder={false}
-                  className="custom-class" // Added !ml-0 to force remove any margin
+                  className="custom-class"
                 >
                   Web and Mobile App Dev
                 </GradientText>
