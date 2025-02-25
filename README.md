@@ -64,6 +64,14 @@ Hi, I'm Subhransu Sekhar Mishra, a passionate developer skilled in web technolog
    npm run dev
 
 🌟 Projects Highlighted in the Portfolio
+- Prompt to image generator:
+    
+  A prompt to image generator which generates images through the prompt also the features of authentication and payment gateway using razorpay .
+
+- Recipe Generator :
+    
+  This is an AI recipe generator which generate recipe using some paramerters.
+
   - Zomato Clone:
     
   A food delivery app built using React.js, Redux, and React Router DOM.
