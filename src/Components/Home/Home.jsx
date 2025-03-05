@@ -22,7 +22,7 @@ const Home = () => {
             className="w-full md:w-1/2 mb-10 md:mb-0 text-center md:text-left"
             data-aos="slide-right"
           >
-            <h1 className="text-lg  font-bold text-gray-700 mb-6 lg:text-3xl">
+            <h1 className="text-lg  font-bold text-white mb-6 lg:text-3xl">
               <BlurText
                 text=" Hi, This is Subhransu"
                 className="custom-class text-3xl md:text-4xl md:font-semibold"
@@ -35,7 +35,7 @@ const Home = () => {
               <h1 className="text-3xl sm:text-3xl md:text-4xl font-bold mb-6 lg:text-6xl w-full text-center md:text-left leading-tight">
 
                 <GradientText
-                  colors={["#220088", "#4079ff", "#000000"]}
+                  colors={['#00e6e6', '#ecfaff', '#00e6e6']}
                   animationSpeed={3}
                   showBorder={false}
                   className="custom-class"
@@ -43,7 +43,7 @@ const Home = () => {
                   Web and Mobile App Dev
                 </GradientText>
               </h1>
-              <p className="text-black text-base sm:text-lg md:text-xl lg:text-2xl mt-4">
+              <p className="text-white text-base sm:text-lg md:text-xl lg:text-2xl mt-4">
                 Transforming ideas into interactive digital experiences, one
                 line of code at a time
               </p>
@@ -58,7 +58,7 @@ const Home = () => {
                   text="Let's Connect"
                   disabled={false}
                   speed={3}
-                  className="custom-class"
+                  className="custom-class text-white"
                 />
                 <ShinyText
                   text={<BsChatTextFill className="mt-1" />}
@@ -75,7 +75,7 @@ const Home = () => {
             className="w-full md:w-1/2 flex justify-center md:justify-end"
             data-aos="slide-left"
           >
-            <div className="relative w-72 h-80 md:w-96 md:h-96 flex items-center justify-center rounded-full bg-gradient-to-r from-primary-100 via-purple-900  to-pink-500 animate-gradient-border">
+            <div className="relative w-72 h-80 md:w-96 md:h-96 flex items-center justify-center rounded-full bg-neutral-500 animate-gradient-border">
               <img
                 src="/my-pic.png"
                 alt="Profile"

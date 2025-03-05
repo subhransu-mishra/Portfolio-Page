@@ -93,7 +93,7 @@ const Project = () => {
     <div className="py-16 bg-secondary-100" id="project_section">
       <h1 className="text-primary-100 text-4xl font-semibold flex justify-center lg:text-5xl">
         <GradientText
-                          colors={["#220088", "#4079ff", "#000000"]}
+                          colors={['#00e6e6', '#ecfaff', '#00e6e6']}
                           animationSpeed={3}
                           showBorder={false}
                           className="custom-class"
@@ -101,7 +101,7 @@ const Project = () => {
                           Projects
                         </GradientText>
       </h1>
-      <p className="text-primary-100 flex justify-center pb-10 font-semibold">
+      <p className="text-white flex justify-center pb-10 font-medium">
         (These are some recent projects I've worked on)
       </p>
       <div className="container mx-auto px-6 md:px-12" data-aos="slide-left">
@@ -140,7 +140,7 @@ const Project = () => {
                     href={project.websiteLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-secondary-100 text-black px-4 py-2 rounded-lg hover:bg-black hover:text-white transition duration-300 mx-5"
+                    className="bg-secondary-100 text-[#00e6e6] px-4 py-2 rounded-lg hover:bg-black hover:text-white transition duration-300 mx-5"
                   >
                     Website
                   </a>
@@ -149,7 +149,7 @@ const Project = () => {
                     href={project.githubLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-secondary-100 text-black px-4 py-2 rounded-lg hover:bg-black hover:text-white transition duration-300"
+                    className="bg-secondary-100 text-[#00e6e6] px-4 py-2 rounded-lg hover:bg-black hover:text-white transition duration-300"
                   >
                     View on GitHub
                     

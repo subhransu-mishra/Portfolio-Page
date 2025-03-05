@@ -30,7 +30,7 @@ const Navbar = () => {
       <div className="container mx-auto px-10 py-7 lg:py-5 flex justify-between items-center">
         {/* Logo Section */}
         <div className="text-2xl font-bold text-third-100 flex hover:text-black">
-          <a href="/home_section" className=" text-4xl">
+          <a href="/home_section" className="text-4xl">
             <ShinyText
               text="Portfolio"
               disabled={false}
@@ -119,51 +119,104 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div
-          id="mobile-menu"
-          className={`md:hidden bg-primary-100 bg-opacity-80 backdrop-blur-md flex flex-col justify-center z-50 shadow-md fixed w-full transition-all duration-300 ease-in-out ${
-            isMobileMenuOpen ? "translate-y-0" : "-translate-y-full"
-          }`}
+      <div
+        id="mobile-menu"
+        className={`
+          md:hidden 
+          fixed 
+          top-0 
+          left-0 
+          w-full 
+          bg-primary-100 
+          bg-opacity-90 
+          backdrop-blur-md 
+          z-40 
+          transform 
+          transition-all 
+          duration-500 
+          ease-in-out 
+          ${isMobileMenuOpen 
+            ? 'translate-y-0 opacity-100' 
+            : '-translate-y-full opacity-0'}
+          pt-24 
+          pb-10 
+          px-6 
+          space-y-4 
+          shadow-lg
+        `}
+        style={{
+          minHeight: '100vh',
+          transformOrigin: 'top center'
+        }}
+      >
+        {/* Close Button */}
+        <button
+          onClick={toggleMobileMenu}
+          className="absolute top-6 right-6 text-third-100 hover:text-secondary-100"
         >
-          <button
-            onClick={() => scrollToSection("home_section")}
-            className="block px-4 py-2 text-third-100 font-semibold"
+          <svg
+            className="w-8 h-8"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            Home
-          </button>
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M6 18L18 6M6 6l12 12"
+            ></path>
+          </svg>
+        </button>
+
+        {/* Menu Items with Staggered Animation */}
+        <div className="flex flex-col items-center space-y-6">
+          {[
+            { id: "home_section", label: "Home" },
+            { id: "about_section", label: "About" },
+            { id: "services_section", label: "Services" },
+            { id: "skills_section", label: "Skills" },
+            { id: "project_section", label: "Projects" },
+            { id: "contact_section", label: "Contact" }
+          ].map((section, index) => (
+            <button
+              key={section.id}
+              onClick={() => scrollToSection(section.id)}
+              className={`
+                text-third-100 
+                font-semibold 
+                text-2xl 
+                transform 
+                transition-all 
+                duration-700 
+                ease-out
+                ${isMobileMenuOpen 
+                  ? `opacity-100 translate-y-0 delay-${index * 100}` 
+                  : 'opacity-0 translate-y-10'}
+              `}
+            >
+              {section.label}
+            </button>
+          ))}
+
+          {/* Download CV Button with Animated Icon */}
           <button
-            onClick={() => scrollToSection("about_section")}
-            className="block px-4 py-2 text-third-100 font-semibold"
-          >
-            About
-          </button>
-          <button
-            onClick={() => scrollToSection("services_section")}
-            className="block px-4 py-2 text-third-100 font-semibold"
-          >
-            Services
-          </button>
-          <button
-            onClick={() => scrollToSection("skills_section")}
-            className="block px-4 py-2 text-third-100 font-semibold"
-          >
-            Skills
-          </button>
-          <button
-            onClick={() => scrollToSection("project_section")}
-            className="block px-4 py-2 text-third-100 font-semibold"
-          >
-            Projects
-          </button>
-          <button
-            onClick={() => scrollToSection("contact_section")}
-            className="block px-4 py-2 text-third-100 font-semibold"
-          >
-            Contact
-          </button>
-          <button
-            className="btn bg-transparent border-none"
+            className="
+              btn 
+              bg-transparent 
+              border-2 
+              border-third-100 
+              text-third-100 
+              hover:bg-third-100 
+              hover:text-primary-100 
+              transition-all 
+              duration-300 
+              ease-in-out 
+              flex 
+              items-center 
+              gap-2
+            "
             onClick={downloadCv}
           >
             <ShinyText
@@ -172,15 +225,10 @@ const Navbar = () => {
               speed={3}
               className="custom-class"
             />
-            <ShinyText
-              text={<MdFileDownload />}
-              disabled={false}
-              speed={3}
-              className="custom-class"
-            />
+            <MdFileDownload className="animate-bounce" />
           </button>
         </div>
-      )}
+      </div>
     </nav>
   );
 };

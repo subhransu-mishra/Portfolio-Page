@@ -35,31 +35,31 @@ const About = () => {
           {/* mini cards */}
           <div className="mt-12 flex flex-col items-center md:grid md:grid-cols-3 gap-20 max-w-screen-lg mx-auto" data-aos="slide-left">
             <div className="bg-secondary-100 w-52 p-6 shadow-lg rounded-lg text-center flex flex-col items-center border border-gray-300 mb-3" >
-              <FaUserGraduate className="text-3xl text-black mb-2" />
-              <h2 className="text-xl font-semibold mb-2 text-black">
+              <FaUserGraduate className="text-3xl text-[#00e6e6] mb-2" />
+              <h2 className="text-xl font-semibold mb-2 text-white">
                 Education
               </h2>
-              <p className="text-black text-sm">
+              <p className="text-white text-sm">
                 Bachelor's of Science in IT from B.J.B. Autonomous College
               </p>
             </div>
 
             {/* Domain Card */}
             <div className="bg-secondary-100 w-52 p-6 shadow-lg rounded-lg text-center flex flex-col items-center border border-gray-300  md:mr-4 mb-3">
-              <FaCode className="text-3xl text-black mb-2" />
-              <h2 className="text-xl font-semibold mb-2 text-black">Domain</h2>
-              <p className="text-black text-sm">
+              <FaCode className="text-3xl text-[#00e6e6] mb-2" />
+              <h2 className="text-xl font-semibold mb-2 text-white">Domain</h2>
+              <p className="text-white text-sm">
                 Software Development (Web and Application Development)
               </p>
             </div>
 
             {/* Projects Card */}
             <div className="bg-secondary-100 w-52 p-6 shadow-lg rounded-lg text-center flex flex-col items-center border border-gray-300 mb-3">
-              <BsFillBagFill className="text-3xl text-black mb-2" />
-              <h2 className="text-xl font-semibold mb-2 text-black">
+              <BsFillBagFill className="text-3xl text-[#00e6e6] mb-2" />
+              <h2 className="text-xl font-semibold mb-2 text-white">
                 Experience
               </h2>
-              <p className="text-black text-sm">
+              <p className="text-white text-sm">
                 Worked over 25+ projects in the field of Software development
               </p>
             </div>
