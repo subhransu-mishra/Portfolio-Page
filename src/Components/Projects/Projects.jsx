@@ -42,20 +42,15 @@ const projects = [
   {
     title: "Prompt to image generator",
     images: [project5Img1, project5Img2, project5Img3, project5Img4,project5Img5,project5Img6],
-    websiteLink: "https://github.com/subhransu-mishra/text-image-generator",
+    websiteLink: "https://canvas-ai-client.onrender.com/",
     githubLink: "https://github.com/subhransu-mishra/text-image-generator",
   },
+ 
   {
-    title: "AI Recipe Generator using GPT-3 Model",
-    images: [project6Img1,project6Img2,project6Img3],
-    websiteLink: "https://github.com/subhransu-mishra/Recipe-Generator",
-    githubLink: "https://github.com/subhransu-mishra/Recipe-Generator",
-  },
-  {
-    title: "Zomato Clone",
+    title: "Online Code Editor",
     images: [project1Img1, project1Img2, project1Img3, project1Img4],
-    websiteLink: "https://zomato-in.netlify.app/",
-    githubLink: "https://github.com/subhransu-mishra/Zomato-Clone",
+    websiteLink: "https://code-ide-frontend-glr4.onrender.com/",
+    githubLink: "https://github.com/subhransu-mishra/Code-IDE",
   },
   {
     title: "Fitness Web App",
@@ -69,12 +64,7 @@ const projects = [
     websiteLink: "https://github.com/subhransu-mishra/nexus-news",
     githubLink: "https://github.com/subhransu-mishra/nexus-news",
   },
-  {
-    title: "E-Commerce Website (Under Development)",
-    images: [project4Img1, project4Img2, project4Img3, project4Img4, project4Img5, project4Img6],
-    websiteLink: "https://e-commercesubhransu.netlify.app/",
-    githubLink: "https://github.com/subhransu-mishra/nexus-news",
-  }
+ 
   // Add more projects here
 ];
 
