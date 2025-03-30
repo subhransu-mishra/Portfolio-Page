@@ -21,10 +21,10 @@ export default {
       },
       colors: {
         primary: {
-          100: "#0f0f0f",
+          100: "#111827",
         },
         secondary: {
-          100: "#1c1c1c",
+          100: "#145a30",
         },
         third: {
           100: "#ecfaff",
