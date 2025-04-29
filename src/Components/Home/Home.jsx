@@ -33,14 +33,14 @@ const Home = () => {
 
         {/* Subheading */}
         <h2 className="text-3xl md:text-4xl text-gray-200 font-semibold mb-6">
-          & designer
+          Hi, I'm Subhransu
         </h2>
 
-        {/* Description */}
+        {/* Description - UPDATED */}
         <p className="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto mb-12">
-          I am a Full-stack Designer & WordPress expert, combining design
-          prowess with technical skills to create stunning websites and
-          immersive digital experiences.
+          As a tech enthusiast, I don't just code - I engineer ecosystems. My
+          mastery of the MERN stack empowers me to craft end-to-end solutions,
+          from blazing-fast APIs to pixel-perfect user interfaces.
         </p>
 
         {/* Social links */}
