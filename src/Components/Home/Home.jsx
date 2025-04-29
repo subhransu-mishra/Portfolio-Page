@@ -1,10 +1,24 @@
 import React from "react";
 import { Dribbble, Linkedin, Instagram, ChevronRight } from "lucide-react";
 import "./../Home/Home.css";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+
 const Home = () => {
+  // Function to smoothly scroll to a section by ID
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    } else {
+      console.warn(`Section with ID "${sectionId}" not found`);
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-emerald-950 flex items-center justify-center relative overflow-hidden">
+    <div
+      className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-emerald-950 flex items-center justify-center relative overflow-hidden"
+      id="home_section"
+    >
       {/* Glowing orb effects */}
       <div className="absolute top-1/4 -left-48 w-96 h-96 bg-emerald-500 rounded-full blur-[128px] opacity-20"></div>
       <div className="absolute bottom-1/4 -right-48 w-96 h-96 bg-emerald-500 rounded-full blur-[128px] opacity-20"></div>
@@ -13,13 +27,13 @@ const Home = () => {
         {/* Main heading with gradient */}
         <h1 className="text-5xl md:text-7xl font-bold mb-4">
           <span className="bg-gradient-to-r from-emerald-400 to-green-500 text-transparent bg-clip-text">
-            Full-Stack Designer
+            Full-Stack Developer
           </span>
         </h1>
 
         {/* Subheading */}
         <h2 className="text-3xl md:text-4xl text-gray-200 font-semibold mb-6">
-          & WordPress Expert
+          & designer
         </h2>
 
         {/* Description */}
@@ -32,20 +46,20 @@ const Home = () => {
         {/* Social links */}
         <div className="flex items-center justify-center gap-6 mb-12">
           <a
-            href="#"
+            href="https://www.linkedin.com/in/subhransu-sekhar-mishra/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-gray-400 hover:text-emerald-400 transition-colors"
-          >
-            <Dribbble size={28} />
-          </a>
-          <a
-            href="#"
-            className="text-gray-400 hover:text-emerald-400 transition-colors"
+            aria-label="LinkedIn Profile"
           >
             <Linkedin size={28} />
           </a>
           <a
-            href="#"
+            href="https://www.instagram.com/subhransumishra_/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-gray-400 hover:text-emerald-400 transition-colors"
+            aria-label="Instagram Profile"
           >
             <Instagram size={28} />
           </a>
@@ -53,13 +67,19 @@ const Home = () => {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
-          <button className="px-8 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full font-semibold flex items-center gap-2 transition-colors">
+          <button
+            onClick={() => scrollToSection("contact_section")}
+            className="px-8 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full font-semibold flex items-center gap-2 transition-colors shadow-lg hover:shadow-emerald-600/30"
+          >
             Have any Project?
             <ChevronRight size={20} />
           </button>
-          <button className="px-8 py-3 border border-gray-600 hover:border-emerald-500 text-gray-300 hover:text-emerald-400 rounded-full font-semibold transition-all">
+          <a
+            href="mailto:work.subhransu@gmail.com?subject=Interested in hiring you&body=Hello Subhransu, I'm interested in working with you on a project."
+            className="px-8 py-3 border border-gray-600 hover:border-emerald-500 text-gray-300 hover:text-emerald-400 rounded-full font-semibold transition-all shadow-lg hover:shadow-emerald-600/20"
+          >
             Hire Me
-          </button>
+          </a>
         </div>
 
         {/* Moving text at bottom */}
@@ -71,15 +91,15 @@ const Home = () => {
               </span>
               <span className="text-2xl font-light text-gray-600 mx-4">•</span>
               <span className="text-2xl font-light text-gray-600 mx-4">
-                GRAPHIC DESIGN
+                WEB DEVELOPMENT
               </span>
               <span className="text-2xl font-light text-gray-600 mx-4">•</span>
               <span className="text-2xl font-light text-gray-600 mx-4">
-                BRANDING
+                APP DEVELOPMENT
               </span>
               <span className="text-2xl font-light text-gray-600 mx-4">•</span>
               <span className="text-2xl font-light text-gray-600 mx-4">
-                WORDPRESS
+                DEPLOYMENT
               </span>
             </div>
           </div>

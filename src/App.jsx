@@ -8,6 +8,7 @@ import Contact from "./Components/Contact/Contact";
 import Footer from "./Components/Footer/Footer";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Education from "./Components/Education/Education";
 
 
 
@@ -17,9 +18,10 @@ function App() {
       <Navbar />
       <Home />
       <About />
-      <Service />
+      <Education />
       <Skills />
       <Projects />
+      <Service />
       <Contact />
       <Footer />
     </div>

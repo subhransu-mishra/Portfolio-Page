@@ -8,7 +8,7 @@ const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const scrollToSection = (sectionId) => {
-    document.getElementById(sectionId).scrollIntoView({ behavior: "smooth" });
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
     setMobileMenuOpen(false);
   };
 
@@ -26,10 +26,18 @@ const Navbar = () => {
     document.body.removeChild(link);
   };
 
+  const navItems = [
+    { id: "about_section", label: "About" },
+    { id: "education_section", label: "Education" },
+    { id: "services_section", label: "Services" },
+    { id: "project_section", label: "Projects" },
+  ];
+
   return (
-    <nav className="fixed top-0 w-full z-50 px-10 py-5 flex justify-between items-center transition-all duration-300">
-      <div className="text-2xl font-bold flex">
-        <a href="/about_section" className="text-4xl">
+    <nav className="fixed top-0 w-full z-50 px-10 py-5 flex justify-between items-center transition-all duration-300 bg-white/10 backdrop-blur-md shadow-md">
+      {/* Logo Section */}
+      <div className="text-2xl font-bold flex items-center">
+        <a href="#home_section" className="text-4xl">
           <ShinyText text="Portfolio" disabled={false} speed={3} className="custom-class" />
         </a>
         <motion.div
@@ -40,26 +48,17 @@ const Navbar = () => {
         </motion.div>
       </div>
 
+      {/* Desktop Navigation */}
       <div className="hidden md:flex items-center space-x-8">
-        <button
-          onClick={() => scrollToSection("about_section")}
-          className="text-third-100 hover:text-secondary-100 font-medium text-lg transition-all duration-300 hover:scale-110"
-        >
-          About
-        </button>
-        <button
-          onClick={() => scrollToSection("services_section")}
-          className="text-third-100 hover:text-secondary-100 font-medium text-lg transition-all duration-300 hover:scale-110"
-        >
-          Services
-        </button>
-        <button
-          onClick={() => scrollToSection("project_section")}
-          className="text-third-100 hover:text-secondary-100 font-medium text-lg transition-all duration-300 hover:scale-110"
-        >
-          Projects
-        </button>
-
+        {navItems.map((item) => (
+          <button
+            key={item.id}
+            onClick={() => scrollToSection(item.id)}
+            className="text-third-100 hover:text-secondary-100 font-medium text-lg transition-all duration-300 hover:scale-110"
+          >
+            {item.label}
+          </button>
+        ))}
         <motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
@@ -71,14 +70,16 @@ const Navbar = () => {
         </motion.button>
       </div>
 
+      {/* Mobile Menu Toggle */}
       <div className="md:hidden">
         <button onClick={toggleMobileMenu} className="text-third-100 focus:outline-none">
-          <svg className="w-8 h-8 text-third-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          <svg className="w-8 h-8 text-third-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
       </div>
 
+      {/* Mobile Navigation Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -89,12 +90,12 @@ const Navbar = () => {
             className="fixed top-0 left-0 w-full h-screen bg-black bg-opacity-80 flex flex-col items-center justify-center space-y-6"
           >
             <button onClick={toggleMobileMenu} className="absolute top-6 right-6 text-white">
-              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
 
-            {[{ id: "about_section", label: "About" }, { id: "services_section", label: "Services" }, { id: "project_section", label: "Projects" }].map((section, index) => (
+            {navItems.map((section, index) => (
               <motion.button
                 key={section.id}
                 onClick={() => scrollToSection(section.id)}

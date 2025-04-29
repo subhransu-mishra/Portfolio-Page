@@ -1,86 +1,109 @@
 import React from "react";
-import { FaUserGraduate } from "react-icons/fa";
-import { BsFillBagFill } from "react-icons/bs";
-import { FaCode } from "react-icons/fa6";
+import { FaUserGraduate, FaCode, FaBriefcase } from "react-icons/fa";
 import ShinyText from "../Ui_components/ShinyText";
 
 const About = () => {
+  const skills = [
+    "React", "Express js","MongoDB", "Node.js", "Tailwind", "C++"
+  ];
+
   return (
-    <div className="bg-primary-100 py-16 lg:h-screen" id="about_section">
-      <h1 className="text-secondary-100 text-4xl font-semibold flex justify-center pb-10">
-      <ShinyText
-              text="About me"
+    <section className="bg-gradient-to-b from-gray-900 to-gray-800 py-24 lg:min-h-screen flex items-center" id="about_section">
+      <div className="container mx-auto px-6">
+        {/* Section Title */}
+        <div className="mb-16 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-transparent bg-clip-text bg-[#145a30] ">
+            <ShinyText
+              text="About Me"
               disabled={false}
               speed={3}
               className="custom-class"
             />
-      </h1>
-
-      {/* Main Content Section */}
-      <div className="container mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between">
-        {/* Left Side: Text Content */}
-        <div className="w-full md:w-1/2 mb-10 md:mb-0 text-center md:text-left">
-          <p
-            className="text-third-100 text-lg leading-relaxed"
-            data-aos="slide-right"
-          >
-            Hello! I'm Subhransu, currently pursuing a Bachelor's of Science in
-            Information Technology and Management. My passion lies in creating
-            impactful digital solutions through software development, with a
-            focus on both web and app development. Throughout my academic
-            journey, I have worked on multiple projects that have allowed me to
-            enhance my skills in frontend and backend technologies, delivering
-            functional and visually appealing applications.
-          </p>
-          {/* mini cards */}
-          <div className="mt-12 flex flex-col items-center md:grid md:grid-cols-3 gap-20 max-w-screen-lg mx-auto" data-aos="slide-left">
-            <div className="bg-secondary-100 w-52 p-6 shadow-lg rounded-lg text-center flex flex-col items-center border border-gray-300 mb-3" >
-              <FaUserGraduate className="text-3xl text-[#00e6e6] mb-2" />
-              <h2 className="text-xl font-semibold mb-2 text-white">
-                Education
-              </h2>
-              <p className="text-white text-sm">
-                Bachelor's of Science in IT from B.J.B. Autonomous College
-              </p>
-            </div>
-
-            {/* Domain Card */}
-            <div className="bg-secondary-100 w-52 p-6 shadow-lg rounded-lg text-center flex flex-col items-center border border-gray-300  md:mr-4 mb-3">
-              <FaCode className="text-3xl text-[#00e6e6] mb-2" />
-              <h2 className="text-xl font-semibold mb-2 text-white">Domain</h2>
-              <p className="text-white text-sm">
-                Software Development (Web and Application Development)
-              </p>
-            </div>
-
-            {/* Projects Card */}
-            <div className="bg-secondary-100 w-52 p-6 shadow-lg rounded-lg text-center flex flex-col items-center border border-gray-300 mb-3">
-              <BsFillBagFill className="text-3xl text-[#00e6e6] mb-2" />
-              <h2 className="text-xl font-semibold mb-2 text-white">
-                Experience
-              </h2>
-              <p className="text-white text-sm">
-                Worked over 25+ projects in the field of Software development
-              </p>
-            </div>
-          </div>
+          </h2>
+          <div className="w-24 h-1 bg-cyan-400 mx-auto"></div>
         </div>
 
-        {/* Right Side: Image Section */}
-        <div className="w-full md:w-1/2 flex justify-center md:justify-end" data-aos="slide-top">
-          <div className="relative">
-            <div className="w-full h-80 md:w-full md:ml-20 md:h-96 flex items-center justify-center">
-              <img
-                src="/about-me.png"
-                alt="Profile"
-                className="w-full h-64 md:w-full md:h-80 object-cover"
-              />
+        <div className="flex flex-col lg:flex-row gap-12 items-center">
+          {/* Image with animated border */}
+          <div className="lg:w-5/12 relative" data-aos="fade-right">
+            <div className="relative group p-2 rounded-xl overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 opacity-75 group-hover:opacity-100 transition-opacity rounded-xl animate-pulse"></div>
+              <div className="relative bg-gray-800 p-3 rounded-lg overflow-hidden">
+                <div className="aspect-square overflow-hidden rounded-lg">
+                  <img
+                    src="/about-me.png"
+                    alt="Subhransu - Software Developer"
+                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+              </div>
             </div>
           </div>
-          
+
+          {/* Content */}
+          <div className="lg:w-7/12" data-aos="fade-left">
+            <div className="bg-gray-800 bg-opacity-50 backdrop-blur-sm p-8 rounded-xl border border-gray-700 shadow-xl">
+              <h3 className="text-2xl font-bold mb-4 text-white">Hello, I'm <span className="text-cyan-400">Subhransu</span></h3>
+              
+              <p className="text-gray-300 leading-relaxed mb-8">
+                I'm currently pursuing a Bachelor's of Science in Information Technology and Management. My passion lies in creating impactful digital solutions through software development, with a focus on both web and app development. Throughout my academic journey, I have worked on multiple projects that have allowed me to enhance my skills in frontend and backend technologies, delivering functional and visually appealing applications.
+              </p>
+
+              {/* Skills section */}
+              <div className="mb-8">
+                <h4 className="text-lg font-semibold text-white mb-3">Technical Skills</h4>
+                <div className="flex flex-wrap gap-2">
+                  {skills.map((skill, index) => (
+                    <span key={index} className="px-3 py-1 bg-gray-700 text-cyan-300 rounded-full text-sm font-medium">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Info cards */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="bg-gray-800 border border-gray-700 rounded-lg p-5 transition-all hover:border-cyan-400 group">
+                  <div className="flex items-center mb-3">
+                    <div className="p-2 bg-gray-700 rounded-lg mr-3 group-hover:bg-cyan-400/20">
+                      <FaUserGraduate className="text-xl text-cyan-400" />
+                    </div>
+                    <h5 className="font-semibold text-white">Education</h5>
+                  </div>
+                  <p className="text-gray-400 text-sm">
+                    Bachelor's of Science in IT from B.J.B. Autonomous College
+                  </p>
+                </div>
+
+                <div className="bg-gray-800 border border-gray-700 rounded-lg p-5 transition-all hover:border-cyan-400 group">
+                  <div className="flex items-center mb-3">
+                    <div className="p-2 bg-gray-700 rounded-lg mr-3 group-hover:bg-cyan-400/20">
+                      <FaCode className="text-xl text-cyan-400" />
+                    </div>
+                    <h5 className="font-semibold text-white">Domain</h5>
+                  </div>
+                  <p className="text-gray-400 text-sm">
+                    Software Development (Web and Application Development)
+                  </p>
+                </div>
+
+                <div className="bg-gray-800 border border-gray-700 rounded-lg p-5 transition-all hover:border-cyan-400 group">
+                  <div className="flex items-center mb-3">
+                    <div className="p-2 bg-gray-700 rounded-lg mr-3 group-hover:bg-cyan-400/20">
+                      <FaBriefcase className="text-xl text-cyan-400" />
+                    </div>
+                    <h5 className="font-semibold text-white">Experience</h5>
+                  </div>
+                  <p className="text-gray-400 text-sm">
+                    Worked on 25+ projects in software development
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
