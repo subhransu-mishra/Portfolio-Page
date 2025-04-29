@@ -132,7 +132,7 @@ const Education = () => {
         "Focused on full-stack development and software engineering principles. Completed multiple projects including a real-time collaboration platform and e-commerce application.",
     },
     {
-      degree: "Secondary Education (10th Grade)",
+      degree: "Secondary Education (12th Grade)",
       institution: "Dharanidhar residential higher secondary school",
       duration: "2020 - 2022",
       grade: "70.16%",
