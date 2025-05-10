@@ -115,7 +115,7 @@ const Education = () => {
       degree: "Bachelor of Science (Information Technology)",
       institution: "B.J.B Autonmous College",
       duration: "2022 - 2025",
-      grade: "7.0 CGPA",
+      grade: "7.31 CGPA",
       courses: [
         "Data Structures & Algorithms",
         "Web Development",
@@ -221,7 +221,7 @@ const Education = () => {
           </div>
 
           <div className="bg-gradient-to-br from-primary-200/40 to-primary-200/10 backdrop-blur-sm border border-cyan-500/20 rounded-xl p-6 text-center">
-            <div className="text-4xl font-bold text-cyan-400 mb-2">7.0+</div>
+            <div className="text-4xl font-bold text-cyan-400 mb-2">7.3+</div>
             <div className="text-gray-300">CGPA Throughout Graduation</div>
           </div>
 
