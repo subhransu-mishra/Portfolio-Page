@@ -9,6 +9,7 @@ import Footer from "./Components/Footer/Footer";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Education from "./Components/Education/Education";
+import Experience from "./Components/Experience/Experience";
 
 
 
@@ -20,6 +21,7 @@ function App() {
       <About />
       <Education />
       <Skills />
+      <Experience/>
       <Projects />
       <Service />
       <Contact />
