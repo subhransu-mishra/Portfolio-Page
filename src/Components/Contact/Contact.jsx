@@ -98,7 +98,7 @@ export default function ContactSection() {
                     </div>
                     <div className="ml-4">
                       <h4 className="text-white font-medium">Email</h4>
-                      <a href="mailto:work.subhransu@gmail.com" className="text-gray-400 hover:text-blue-400 transition">hello@techdev.com</a>
+                      <a href="mailto:work.subhransu@gmail.com" className="text-gray-400 hover:text-blue-400 transition">work.subhransu@gmail.com</a>
                     </div>
                   </div>
                   
@@ -229,7 +229,7 @@ export default function ContactSection() {
                               <MapPin className="w-8 h-8 text-blue-400" />
                             </div>
                             <h3 className="text-white text-xl font-medium mb-2">Our Location</h3>
-                            <p className="text-gray-400 mb-4">Tech Innovation Hub<br/>Bhubaneswar, Odisha , India</p>
+                            <p className="text-gray-400 mb-4"><br/>Bhubaneswar, Odisha , India</p>
                             <a 
                               href="https://maps.app.goo.gl/BFXAQtbeo5fCQe9F6" 
                               target="_blank" 

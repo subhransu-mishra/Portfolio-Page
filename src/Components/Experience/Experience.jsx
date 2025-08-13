@@ -30,7 +30,7 @@ const ExperienceCard = ({ experience, index }) => {
       <div
         className={`
           ${index % 2 === 0 ? "mr-16" : "ml-16"} mb-16 
-          bg-gradient-to-br from-primary-200/40 to-primary-200/10
+          bg-gradient-to-br from-primary-100/40 to-primary-100/10
           backdrop-blur-sm border border-emerald-500/20 rounded-xl overflow-hidden
           transition-all duration-500 cursor-pointer hover:shadow-lg hover:shadow-emerald-500/10
           ${isExpanded ? "shadow-xl shadow-emerald-500/20" : ""}
@@ -194,7 +194,7 @@ const Experience = () => {
       role: "Full Stack Developer Intern",
       company: "ITPlusPoint",
       location: "Bhubaneswar, India",
-      duration: "June 2025 - Present",
+      duration: "June 2025 - Aug 2025",
       type: "Full-time",
       employmentType: "Hybrid",
       responsibilities: [
@@ -203,28 +203,20 @@ const Experience = () => {
         "Handling the finance and accounting software for the company",
         "Optimized application performance and implemented best practices",
       ],
-      techStack: [
-        "React",
-        "Node.js",
-        "MongoDB",
-        "Express",
-        "TypeScript",
-        
-      ],
+      techStack: ["React", "Node.js", "MongoDB", "Express", "TypeScript"],
       achievements: [
         "Reduced application load time by 40% through optimization",
         "Led a team of 2 developers for a major project",
-       
       ],
       description:
         "Working on cutting-edge web applications with focus on scalability and user experience.",
     },
-    
+
     {
       role: "Freelance Developer",
       company: "Self-Employed",
       location: "Bhubaneswar, India",
-      duration: "Augest 2024 - April 2025",
+      duration: "August 2024 - April 2025",
       type: "Freelance",
       employmentType: "Part-time",
       responsibilities: [
@@ -307,22 +299,22 @@ const Experience = () => {
         className="max-w-4xl mx-auto mt-20 px-6"
       >
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-          <div className="bg-gradient-to-br from-primary-200/40 to-primary-200/10 backdrop-blur-sm border border-emerald-500/20 rounded-xl p-6 text-center">
+          <div className="bg-gradient-to-br from-primary-100/40 to-primary-100/10 backdrop-blur-sm border border-emerald-500/20 rounded-xl p-6 text-center">
             <div className="text-4xl font-bold text-emerald-400 mb-2">2+</div>
             <div className="text-gray-300">Years of Experience</div>
           </div>
 
-          <div className="bg-gradient-to-br from-primary-200/40 to-primary-200/10 backdrop-blur-sm border border-emerald-500/20 rounded-xl p-6 text-center">
+          <div className="bg-gradient-to-br from-primary-100/40 to-primary-100/10 backdrop-blur-sm border border-emerald-500/20 rounded-xl p-6 text-center">
             <div className="text-4xl font-bold text-emerald-400 mb-2">15+</div>
             <div className="text-gray-300">Projects Completed</div>
           </div>
 
-          <div className="bg-gradient-to-br from-primary-200/40 to-primary-200/10 backdrop-blur-sm border border-emerald-500/20 rounded-xl p-6 text-center">
+          <div className="bg-gradient-to-br from-primary-100/40 to-primary-100/10 backdrop-blur-sm border border-emerald-500/20 rounded-xl p-6 text-center">
             <div className="text-4xl font-bold text-emerald-400 mb-2">10+</div>
             <div className="text-gray-300">Technologies Mastered</div>
           </div>
 
-          <div className="bg-gradient-to-br from-primary-200/40 to-primary-200/10 backdrop-blur-sm border border-emerald-500/20 rounded-xl p-6 text-center">
+          <div className="bg-gradient-to-br from-primary-100/40 to-primary-100/10 backdrop-blur-sm border border-emerald-500/20 rounded-xl p-6 text-center">
             <div className="text-4xl font-bold text-emerald-400 mb-2">100%</div>
             <div className="text-gray-300">Client Satisfaction</div>
           </div>

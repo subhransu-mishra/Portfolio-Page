@@ -265,27 +265,7 @@ const Footer = () => {
             </div>
 
             {/* Newsletter - Now placed inside navigation column for better mobile layout */}
-            <div className="mt-8 w-full">
-              <h4 className="text-lg font-medium text-[#00e6e6] mb-2">Stay Updated</h4>
-              <form onSubmit={handleNewsletterSubmit} className="w-full">
-                <div className="flex flex-col sm:flex-row gap-2">
-                  <input
-                    name="email"
-                    type="email"
-                    required
-                    placeholder="Your email"
-                    className="py-2 px-4 bg-black/30 border border-gray-800 rounded-md sm:rounded-l-md sm:rounded-r-none focus:outline-none focus:ring-1 focus:ring-[#00e6e6] text-gray-200 w-full"
-                  />
-                  <button
-                    type="submit"
-                    className="bg-gradient-to-r from-[#00e6e6] to-[#00b3b3] hover:from-[#00b3b3] hover:to-[#00e6e6] py-2 px-4 rounded-md sm:rounded-r-md sm:rounded-l-none text-black font-medium transition-all duration-300 cursor-pointer hover:shadow-glow"
-                  >
-                    Subscribe
-                  </button>
-                </div>
-                <p className="text-gray-400 text-xs mt-2">Get latest updates & news</p>
-              </form>
-            </div>
+          
           </motion.div>
 
           {/* Social Media */}

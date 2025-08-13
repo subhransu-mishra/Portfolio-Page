@@ -236,7 +236,7 @@ const Skills = () => {
         </div>
         
         {/* Skills summary */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.8 }}
@@ -258,7 +258,7 @@ const Skills = () => {
               </div>
             ))}
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
       
       {/* CSS for 3D effects */}

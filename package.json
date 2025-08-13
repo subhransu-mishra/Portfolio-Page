@@ -13,9 +13,12 @@
     "@react-spring/web": "^9.7.5",
     "@splinetool/react-spline": "^4.0.0",
     "@splinetool/runtime": "^1.9.28",
+    "@tabler/icons-react": "^3.34.0",
     "bootstrap": "^5.3.3",
+    "clsx": "^2.1.1",
     "framer-motion": "^12.5.0",
     "lucide-react": "^0.483.0",
+    "motion": "^12.19.2",
     "next-themes": "^0.3.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -24,7 +27,8 @@
     "react-router-dom": "^6.26.2",
     "react-slick": "^0.30.2",
     "react-type-animation": "^3.2.0",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",

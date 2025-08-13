@@ -1,4 +1,3 @@
-import Navbar from "./Components/Navbar/Navbar";
 import Home from "./Components/Home/Home";
 import About from "./Components/About/About";
 import Skills from "./Components/Skills/Skills";
@@ -10,20 +9,21 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Education from "./Components/Education/Education";
 import Experience from "./Components/Experience/Experience";
-
-
+import Navbar from "./Components/Navbar/Navbar";
 
 function App() {
+
+
   return (
     <div>
-      <Navbar />
+<Navbar/>
       <Home />
       <About />
       <Education />
       <Skills />
-      <Experience/>
+      <Experience />
       <Projects />
-      <Service />
+      {/* <Service /> */}
       <Contact />
       <Footer />
     </div>

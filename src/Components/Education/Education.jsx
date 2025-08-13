@@ -14,7 +14,7 @@ const EducationCard = ({ education, index }) => {
       {/* Timeline connector */}
       <div
         className="absolute left-6 top-8 bottom-0 w-0.5 bg-gradient-to-b from-cyan-400 to-transparent"
-        style={{ display: index === 2 ? "none" : "block" }}
+        style={{ display: index === 3 ? "none" : "block" }}
       ></div>
 
       {/* Timeline node */}
@@ -47,7 +47,6 @@ const EducationCard = ({ education, index }) => {
               <span className="text-cyan-400 font-medium">
                 {education.grade}
               </span>
-             
             </div>
           </div>
         </div>
@@ -112,6 +111,27 @@ const EducationCard = ({ education, index }) => {
 const Education = () => {
   const educationData = [
     {
+      degree: "Master of Computer Applications (MCA)",
+      institution: "Trident Academy of Creative Technology",
+      duration: "2025 - 2027",
+      grade: "Pursuing",
+      courses: [
+        "Advanced Data Structures & Algorithms",
+        "Software Engineering",
+        "Database Management Systems",
+        "Machine Learning",
+        "Cloud Computing",
+        "Mobile Application Development",
+      ],
+      achievements: [
+        "Currently pursuing advanced studies",
+        "Focus on cutting-edge technologies",
+        "Research-oriented coursework",
+      ],
+      description:
+        "Pursuing advanced studies in computer applications with focus on emerging technologies, software architecture, and research methodologies.",
+    },
+    {
       degree: "Bachelor of Science (Information Technology)",
       institution: "B.J.B Autonmous College",
       duration: "2022 - 2025",
@@ -119,7 +139,7 @@ const Education = () => {
       courses: [
         "Data Structures & Algorithms",
         "Web Development",
-       "Application Development",
+        "Application Development",
         "Computer Networks",
         "Operating Systems",
       ],
@@ -136,12 +156,7 @@ const Education = () => {
       institution: "Dharanidhar residential higher secondary school",
       duration: "2020 - 2022",
       grade: "70.16%",
-      courses: [
-        "Mathematics",
-        "Physics",
-        "Chemistry",
-        "English",
-      ],
+      courses: ["Mathematics", "Physics", "Chemistry", "English"],
       achievements: [
         "Science exhibition winner",
         "Active member of coding club",
@@ -149,7 +164,6 @@ const Education = () => {
       description:
         "Specialized in Science stream with Computer Science as an elective subject. Developed strong fundamentals in programming and problem-solving.",
     },
-   
   ];
 
   return (
@@ -216,7 +230,7 @@ const Education = () => {
       >
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-gradient-to-br from-primary-200/40 to-primary-200/10 backdrop-blur-sm border border-cyan-500/20 rounded-xl p-6 text-center">
-            <div className="text-4xl font-bold text-cyan-400 mb-2">3.0</div>
+            <div className="text-4xl font-bold text-cyan-400 mb-2">5.0</div>
             <div className="text-gray-300">Years of Academic Excellence</div>
           </div>
 
@@ -226,7 +240,7 @@ const Education = () => {
           </div>
 
           <div className="bg-gradient-to-br from-primary-200/40 to-primary-200/10 backdrop-blur-sm border border-cyan-500/20 rounded-xl p-6 text-center">
-            <div className="text-4xl font-bold text-cyan-400 mb-2">10+</div>
+            <div className="text-4xl font-bold text-cyan-400 mb-2">15+</div>
             <div className="text-gray-300">Academic & other Achievements</div>
           </div>
         </div>
