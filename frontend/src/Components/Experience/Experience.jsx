@@ -1,27 +1,29 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
-const ExperienceCard = ({ experience, index }) => {
+const ExperienceCard = ({ experience, index, isLast }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
     <motion.div
       initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-      animate={{ opacity: 1, x: 0 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true }}
       transition={{ duration: 0.6, delay: index * 0.2 }}
       className="relative w-full"
     >
-      {/* Timeline connector */}
-      <div
-        className={`absolute top-8 bottom-0 w-0.5 bg-gradient-to-b from-emerald-400 to-transparent ${
-          index % 2 === 0 ? "left-6" : "right-6"
-        }`}
-        style={{ display: index === 2 ? "none" : "block" }}
-      ></div>
+      {/* Timeline connector - Only show if not the last item */}
+      {!isLast && (
+        <div
+          className={`absolute top-8 bottom-0 w-0.5 bg-gradient-to-b from-black to-gray-300 ${
+            index % 2 === 0 ? "left-6" : "right-6"
+          }`}
+        ></div>
+      )}
 
       {/* Timeline node */}
       <div
-        className={`absolute top-6 w-4 h-4 rounded-full bg-emerald-400 shadow-lg shadow-emerald-400/50 z-10 ${
+        className={`absolute top-6 w-4 h-4 rounded-full bg-black shadow-lg z-10 ${
           index % 2 === 0 ? "left-4" : "right-4"
         }`}
       ></div>
@@ -30,10 +32,9 @@ const ExperienceCard = ({ experience, index }) => {
       <div
         className={`
           ${index % 2 === 0 ? "mr-16" : "ml-16"} mb-16 
-          bg-gradient-to-br from-primary-100/40 to-primary-100/10
-          backdrop-blur-sm border border-emerald-500/20 rounded-xl overflow-hidden
-          transition-all duration-500 cursor-pointer hover:shadow-lg hover:shadow-emerald-500/10
-          ${isExpanded ? "shadow-xl shadow-emerald-500/20" : ""}
+          bg-white border-2 border-gray-200 rounded-xl overflow-hidden
+          transition-all duration-500 cursor-pointer hover:border-black hover:shadow-lg
+          ${isExpanded ? "shadow-xl border-black" : ""}
         `}
         onClick={() => setIsExpanded(!isExpanded)}
       >
@@ -41,25 +42,25 @@ const ExperienceCard = ({ experience, index }) => {
         <div className="p-6 flex flex-col md:flex-row md:items-center md:justify-between">
           <div className="flex-1">
             <div className="flex items-center gap-3 mb-3">
-              <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-emerald-500/20 text-emerald-400">
+              <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-black text-white">
                 {experience.duration}
               </span>
-              <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-cyan-500/20 text-cyan-400">
+              <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-gray-100 text-black border border-gray-200">
                 {experience.type}
               </span>
             </div>
-            <h3 className="text-xl md:text-2xl font-bold text-white mb-1">
+            <h3 className="text-xl md:text-2xl font-bold text-black mb-1">
               {experience.role}
             </h3>
-            <h4 className="text-lg text-emerald-400 font-medium mb-1">
+            <h4 className="text-lg text-gray-700 font-medium mb-1">
               {experience.company}
             </h4>
-            <p className="text-gray-300 text-sm">{experience.location}</p>
+            <p className="text-gray-600 text-sm">{experience.location}</p>
           </div>
 
           <div className="mt-4 md:mt-0 flex items-center">
             <div className="flex items-center gap-2">
-              <span className="text-emerald-400 font-medium">
+              <span className="text-black font-medium px-3 py-1 bg-gray-100 rounded-lg border border-gray-200">
                 {experience.employmentType}
               </span>
             </div>
@@ -69,13 +70,13 @@ const ExperienceCard = ({ experience, index }) => {
         {/* Expandable details section */}
         <div
           className={`
-            overflow-hidden transition-all duration-500 bg-primary-100/70 border-t border-emerald-500/10
+            overflow-hidden transition-all duration-500 bg-gray-50 border-t border-gray-200
             ${isExpanded ? "max-h-96 p-6" : "max-h-0"}
           `}
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <h5 className="text-emerald-400 font-medium mb-3 flex items-center gap-2">
+              <h5 className="text-black font-medium mb-3 flex items-center gap-2">
                 <svg
                   className="w-4 h-4"
                   fill="none"
@@ -91,9 +92,10 @@ const ExperienceCard = ({ experience, index }) => {
                 </svg>
                 Key Responsibilities
               </h5>
-              <ul className="list-disc list-inside space-y-2 text-gray-300">
+              <ul className="space-y-2 text-gray-700">
                 {experience.responsibilities.map((responsibility, idx) => (
-                  <li key={idx} className="text-sm">
+                  <li key={idx} className="text-sm flex items-start">
+                    <span className="inline-block w-1.5 h-1.5 bg-black rounded-full mt-2 mr-2"></span>
                     {responsibility}
                   </li>
                 ))}
@@ -101,7 +103,7 @@ const ExperienceCard = ({ experience, index }) => {
             </div>
 
             <div>
-              <h5 className="text-cyan-400 font-medium mb-3 flex items-center gap-2">
+              <h5 className="text-black font-medium mb-3 flex items-center gap-2">
                 <svg
                   className="w-4 h-4"
                   fill="none"
@@ -121,7 +123,7 @@ const ExperienceCard = ({ experience, index }) => {
                 {experience.techStack.map((tech, idx) => (
                   <span
                     key={idx}
-                    className="px-3 py-1 text-xs font-medium rounded-full bg-cyan-500/20 text-cyan-400 border border-cyan-500/30"
+                    className="px-3 py-1 text-xs font-medium rounded-full bg-gray-100 text-black border border-gray-200"
                   >
                     {tech}
                   </span>
@@ -132,7 +134,7 @@ const ExperienceCard = ({ experience, index }) => {
 
           {experience.achievements && experience.achievements.length > 0 && (
             <div className="mt-6">
-              <h5 className="text-emerald-400 font-medium mb-3 flex items-center gap-2">
+              <h5 className="text-black font-medium mb-3 flex items-center gap-2">
                 <svg
                   className="w-4 h-4"
                   fill="none"
@@ -148,9 +150,10 @@ const ExperienceCard = ({ experience, index }) => {
                 </svg>
                 Key Achievements
               </h5>
-              <ul className="list-disc list-inside space-y-2 text-gray-300">
+              <ul className="space-y-2 text-gray-700">
                 {experience.achievements.map((achievement, idx) => (
-                  <li key={idx} className="text-sm">
+                  <li key={idx} className="text-sm flex items-start">
+                    <span className="inline-block w-1.5 h-1.5 bg-black rounded-full mt-2 mr-2"></span>
                     {achievement}
                   </li>
                 ))}
@@ -159,15 +162,17 @@ const ExperienceCard = ({ experience, index }) => {
           )}
 
           {experience.description && (
-            <div className="mt-4">
-              <h5 className="text-emerald-400 font-medium mb-2">About</h5>
-              <p className="text-gray-300 text-sm">{experience.description}</p>
+            <div className="mt-4 p-4 bg-white rounded-lg border border-gray-200">
+              <h5 className="text-black font-medium mb-2">About</h5>
+              <p className="text-gray-700 text-sm italic">
+                "{experience.description}"
+              </p>
             </div>
           )}
         </div>
 
         {/* Expand indicator */}
-        <div className="absolute bottom-20 right-6 text-emerald-400">
+        <div className="absolute bottom-4 right-6 text-gray-400 hover:text-black transition-colors">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className={`h-5 w-5 transition-transform duration-300 ${
@@ -238,43 +243,40 @@ const Experience = () => {
 
   return (
     <div
-      className="bg-primary-100 py-20 relative overflow-hidden"
+      className="py-20 bg-white relative overflow-hidden"
       id="experience_section"
     >
-      {/* Background decoration */}
-      <div className="absolute inset-0 overflow-hidden">
-        {/* Gradient orbs */}
-        <div className="absolute top-40 right-20 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-40 left-20 w-72 h-72 bg-cyan-500/5 rounded-full blur-3xl"></div>
+      {/* Notebook paper background */}
+      <div className="absolute inset-0 bg-white bg-notebook-paper"></div>
 
-        {/* Binary code pattern in background */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="h-full w-full flex flex-wrap text-xs overflow-hidden">
-            {Array.from({ length: 100 }).map((_, i) => (
-              <div
-                key={i}
-                className="text-emerald-500 opacity-20"
-                style={{ fontSize: "8px" }}
-              >
-                {Math.random() > 0.5 ? "1" : "0"}
-              </div>
-            ))}
-          </div>
-        </div>
+      {/* Background decorations */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-20 left-10 w-20 h-20 rounded-full bg-lime-100 opacity-40"></div>
+        <div className="absolute bottom-20 right-10 w-40 h-40 rounded-full bg-green-100 opacity-40"></div>
+        <div className="absolute top-1/3 right-1/4 w-60 h-60 rounded-full bg-lime-50 opacity-30"></div>
+
+        {/* Paper clips */}
+        <div className="absolute top-0 left-1/4 w-12 h-6 bg-gradient-to-b from-gray-300 to-gray-400 rounded-b-lg shadow-md transform -translate-x-1/2"></div>
+        <div className="absolute top-0 right-1/4 w-12 h-6 bg-gradient-to-b from-gray-300 to-gray-400 rounded-b-lg shadow-md transform translate-x-1/2"></div>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section title */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="mb-16 text-center"
         >
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">
-            Professional Journey
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+            <span className="text-black">Professional </span>
+            <span className="bg-black text-white px-4 py-2 inline-block transform -rotate-1 hover:rotate-0 transition-transform duration-300">
+              Journey
+            </span>
           </h1>
-          <p className="text-gray-300 max-w-2xl mx-auto text-lg">
+          <div className="w-16 h-1 bg-black mx-auto rounded-full mb-4"></div>
+          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
             My work experience that showcases my growth, skills, and
             contributions in the tech industry.
           </p>
@@ -283,43 +285,64 @@ const Experience = () => {
         {/* Experience Timeline */}
         <div className="relative max-w-6xl mx-auto">
           {experienceData.map((experience, index) => (
-            <ExperienceCard key={index} experience={experience} index={index} />
+            <ExperienceCard
+              key={index}
+              experience={experience}
+              index={index}
+              isLast={index === experienceData.length - 1}
+            />
           ))}
 
           {/* Timeline start indicator */}
-          <div className="absolute left-4 -top-4 w-4 h-4 rounded-full bg-secondary-100 border-4 border-primary-100"></div>
+          <div className="absolute left-4 -top-4 w-4 h-4 rounded-full bg-gray-200 border-4 border-white"></div>
         </div>
       </div>
 
       {/* Stats/Summary section */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
         transition={{ duration: 0.8, delay: 0.8 }}
-        className="max-w-4xl mx-auto mt-20 px-6"
+        className="max-w-4xl mx-auto mt-20 px-6 relative z-10"
       >
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-          <div className="bg-gradient-to-br from-primary-100/40 to-primary-100/10 backdrop-blur-sm border border-emerald-500/20 rounded-xl p-6 text-center">
-            <div className="text-4xl font-bold text-emerald-400 mb-2">2+</div>
-            <div className="text-gray-300">Years of Experience</div>
+          <div className="bg-white rounded-xl p-6 shadow-sm border-2 border-gray-200 hover:border-black transition-colors text-center">
+            <div className="text-4xl font-bold text-black mb-2">2+</div>
+            <div className="text-gray-600">Years of Experience</div>
           </div>
 
-          <div className="bg-gradient-to-br from-primary-100/40 to-primary-100/10 backdrop-blur-sm border border-emerald-500/20 rounded-xl p-6 text-center">
-            <div className="text-4xl font-bold text-emerald-400 mb-2">15+</div>
-            <div className="text-gray-300">Projects Completed</div>
+          <div className="bg-white rounded-xl p-6 shadow-sm border-2 border-gray-200 hover:border-black transition-colors text-center">
+            <div className="text-4xl font-bold text-black mb-2">15+</div>
+            <div className="text-gray-600">Projects Completed</div>
           </div>
 
-          <div className="bg-gradient-to-br from-primary-100/40 to-primary-100/10 backdrop-blur-sm border border-emerald-500/20 rounded-xl p-6 text-center">
-            <div className="text-4xl font-bold text-emerald-400 mb-2">10+</div>
-            <div className="text-gray-300">Technologies Mastered</div>
+          <div className="bg-white rounded-xl p-6 shadow-sm border-2 border-gray-200 hover:border-black transition-colors text-center">
+            <div className="text-4xl font-bold text-black mb-2">10+</div>
+            <div className="text-gray-600">Technologies Mastered</div>
           </div>
 
-          <div className="bg-gradient-to-br from-primary-100/40 to-primary-100/10 backdrop-blur-sm border border-emerald-500/20 rounded-xl p-6 text-center">
-            <div className="text-4xl font-bold text-emerald-400 mb-2">100%</div>
-            <div className="text-gray-300">Client Satisfaction</div>
+          <div className="bg-white rounded-xl p-6 shadow-sm border-2 border-gray-200 hover:border-black transition-colors text-center">
+            <div className="text-4xl font-bold text-black mb-2">100%</div>
+            <div className="text-gray-600">Client Satisfaction</div>
           </div>
         </div>
       </motion.div>
+
+      {/* Notebook paper styling */}
+      <style jsx>{`
+        .bg-notebook-paper {
+          background-image: linear-gradient(#f1f1f1 1px, transparent 1px),
+            linear-gradient(90deg, #f1f1f1 1px, transparent 1px);
+          background-size: 20px 20px;
+        }
+
+        @media (max-width: 768px) {
+          .bg-notebook-paper {
+            background-size: 15px 15px;
+          }
+        }
+      `}</style>
     </div>
   );
 };

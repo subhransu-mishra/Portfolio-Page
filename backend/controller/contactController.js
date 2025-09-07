@@ -5,13 +5,41 @@ const Contact = require("../models/contact");
 const validateContactData = (data) => {
   const errors = [];
 
-  // Only validate email format
+  // Validate name
+  if (
+    !data.name ||
+    typeof data.name !== "string" ||
+    data.name.trim().length < 2
+  ) {
+    errors.push("Name must be at least 2 characters long");
+  }
+
+  // Validate email format
   if (
     !data.email ||
     typeof data.email !== "string" ||
     !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)
   ) {
     errors.push("Please provide a valid email address");
+  }
+
+  // Validate message
+  if (
+    !data.message ||
+    typeof data.message !== "string" ||
+    data.message.trim().length < 10
+  ) {
+    errors.push("Message must be at least 10 characters long");
+  }
+
+  // Validate subject length if provided
+  if (data.subject && data.subject.length > 100) {
+    errors.push("Subject must be less than 100 characters");
+  }
+
+  // Validate message length
+  if (data.message && data.message.length > 1000) {
+    errors.push("Message must be less than 1000 characters");
   }
 
   return errors;
@@ -42,10 +70,10 @@ const createContact = async (req, res) => {
 
     // Create new contact with safe values - no more trim() checks
     const newContact = new Contact({
-      name: name || "",
-      email: email.toLowerCase(),
-      subject: subject || "",
-      message: message || "",
+      name: name.trim(),
+      email: email.toLowerCase().trim(),
+      subject: subject.trim(),
+      message: message.trim(),
     });
 
     await newContact.save();
@@ -114,13 +142,6 @@ const getAllContacts = async (req, res) => {
     });
   }
 };
-
-module.exports = {
-  createContact,
-  getAllContacts,
-};
-
-
 
 module.exports = {
   createContact,

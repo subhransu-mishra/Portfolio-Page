@@ -4,8 +4,9 @@ const contactSchema = new mongoose.Schema(
   {
     name: {
       type: String,
-      required: false,
+      required: [true, "Name is required"],
       trim: true,
+      minlength: [2, "Name must be at least 2 characters long"],
     },
     email: {
       type: String,
@@ -21,11 +22,14 @@ const contactSchema = new mongoose.Schema(
       type: String,
       trim: true,
       default: "",
+      maxlength: [100, "Subject must be less than 100 characters"],
     },
     message: {
       type: String,
-      required: false,
+      required: [true, "Message is required"],
       trim: true,
+      minlength: [10, "Message must be at least 10 characters long"],
+      maxlength: [1000, "Message must be less than 1000 characters"],
     },
   },
   {
@@ -39,5 +43,3 @@ contactSchema.index({ email: 1, createdAt: -1 });
 const Contact = mongoose.model("Contact", contactSchema);
 
 module.exports = Contact;
-
-
