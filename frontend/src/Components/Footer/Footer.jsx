@@ -5,6 +5,7 @@ import { SiDiscord } from "react-icons/si";
 import { FaXTwitter } from "react-icons/fa6";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { motion } from "framer-motion";
+import { SiLeetcode } from "react-icons/si";
 
 const Footer = () => {
   const canvasRef = useRef(null);
@@ -13,7 +14,7 @@ const Footer = () => {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    
+
     const ctx = canvas.getContext("2d");
 
     const setCanvasDimensions = () => {
@@ -24,7 +25,8 @@ const Footer = () => {
     setCanvasDimensions();
     window.addEventListener("resize", setCanvasDimensions);
 
-    const characters = "アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789";
+    const characters =
+      "アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789";
     const fontSize = 14;
     let columns = Math.floor(canvas.width / fontSize);
     let drops = [];
@@ -41,7 +43,9 @@ const Footer = () => {
       ctx.font = `${fontSize}px monospace`;
 
       for (let i = 0; i < drops.length; i++) {
-        const text = characters.charAt(Math.floor(Math.random() * characters.length));
+        const text = characters.charAt(
+          Math.floor(Math.random() * characters.length)
+        );
         ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
         if (drops[i] * fontSize > canvas.height && Math.random() > 0.98) {
@@ -62,18 +66,18 @@ const Footer = () => {
   // Simplified and more reliable navigation handler
   const handleNavigationClick = (e, targetId) => {
     e.preventDefault();
-    
+
     // Remove the # if present
-    const sectionId = targetId.replace('#', '');
-    
+    const sectionId = targetId.replace("#", "");
+
     // Try to find the element
     const targetElement = document.getElementById(sectionId);
-    
+
     if (targetElement) {
       // Smooth scroll to the element
       window.scrollTo({
         top: targetElement.offsetTop - 80, // Offset for header
-        behavior: 'smooth'
+        behavior: "smooth",
       });
       console.log(`Scrolling to ${sectionId}`);
     } else {
@@ -83,12 +87,41 @@ const Footer = () => {
 
   // Updated social links with proper URLs
   const socialLinks = [
-    { icon: <IoLogoGithub size={22} />, href: "https://github.com/subhransu-mishra", name: "GitHub" },
-    { icon: <FaLinkedin size={22} />, href: "https://www.linkedin.com/in/subhransu-sekhar-mishra/", name: "LinkedIn" },
-    { icon: <FaInstagram size={22} />, href: "https://www.instagram.com/subhransumishra_/", name: "Instagram" },
-    { icon: <FaXTwitter size={22} />, href: "https://x.com/Subhransu__45", name: "Twitter" },
-    { icon: <SiDiscord size={22} />, href: "https://discord.com/channels/1252281235049418753/1292512084852211763", name: "Discord" },
-    { icon: <IoLogoWhatsapp size={22} />, href: "https://wa.me/917008207704", name: "WhatsApp" },
+    {
+      icon: <IoLogoGithub size={22} />,
+      href: "https://github.com/subhransu-mishra",
+      name: "GitHub",
+    },
+    {
+      icon: <FaLinkedin size={22} />,
+      href: "https://www.linkedin.com/in/subhransu-sekhar-mishra/",
+      name: "LinkedIn",
+    },
+    {
+      icon: <SiLeetcode size={22} />,
+      href: "https://leetcode.com/u/subhransu_sekhar_mishra/",
+      name: "LeetCode",
+    },
+    {
+      icon: <FaInstagram size={22} />,
+      href: "https://www.instagram.com/subhransumishra_/",
+      name: "Instagram",
+    },
+    {
+      icon: <FaXTwitter size={22} />,
+      href: "https://x.com/Subhransu__45",
+      name: "Twitter",
+    },
+    {
+      icon: <SiDiscord size={22} />,
+      href: "https://discord.com/channels/1252281235049418753/1292512084852211763",
+      name: "Discord",
+    },
+    {
+      icon: <IoLogoWhatsapp size={22} />,
+      href: "https://wa.me/917008207704",
+      name: "WhatsApp",
+    },
   ];
 
   // Navigation links with IDs matching your page sections
@@ -107,30 +140,29 @@ const Footer = () => {
     const form = e.target;
     const submitBtn = form.querySelector('button[type="submit"]');
     const originalBtnText = submitBtn.innerText;
-    
+
     const formData = new FormData(form);
     const email = formData.get("email");
-    
+
     if (!email) {
-      alert('Please enter your email address');
+      alert("Please enter your email address");
       return;
     }
-    
+
     try {
       // Show loading state
       submitBtn.innerText = "Sending...";
       submitBtn.disabled = true;
-      
+
       // Simulate API call with timeout
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+
       // Mock success for now
       console.log(`Subscribing email: ${email}`);
-      alert('Thank you for subscribing!');
+      alert("Thank you for subscribing!");
       form.reset();
-      
     } catch (error) {
-      console.error('Subscription failed:', error);
+      console.error("Subscription failed:", error);
       alert(`Subscription failed: ${error.message}`);
     } finally {
       // Restore button state
@@ -158,7 +190,10 @@ const Footer = () => {
 
   return (
     <footer className="relative bg-gradient-to-b from-gray-900 to-black text-white py-16 overflow-hidden">
-      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full opacity-20" />
+      <canvas
+        ref={canvasRef}
+        className="absolute inset-0 w-full h-full opacity-20"
+      />
 
       <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2/3 h-32 bg-[#00e6e6] rounded-full filter blur-[80px] opacity-15"></div>
 
@@ -171,7 +206,10 @@ const Footer = () => {
           viewport={{ once: true, margin: "-100px" }}
         >
           {/* Company Info */}
-          <motion.div variants={itemVariants} className="flex flex-col items-center md:items-start">
+          <motion.div
+            variants={itemVariants}
+            className="flex flex-col items-center md:items-start"
+          >
             <h3 className="text-2xl font-bold mb-6 relative">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#00e6e6] to-[#00b3b3]">
                 Subhransu Sekhar Mishra
@@ -183,7 +221,10 @@ const Footer = () => {
 
             <div className="space-y-4">
               {/* Email - Interactive and working mailto link */}
-              <a href="mailto:work.subhransu@gmail.com" className="flex items-center group hover:scale-105 transition-transform duration-300">
+              <a
+                href="mailto:work.subhransu@gmail.com"
+                className="flex items-center group hover:scale-105 transition-transform duration-300"
+              >
                 <div className="w-10 h-10 flex items-center justify-center rounded-md bg-black/30 border border-gray-700 group-hover:border-[#00e6e6] transition-all duration-300 mr-3">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -229,9 +270,9 @@ const Footer = () => {
                     />
                   </svg>
                 </div>
-                <a 
-                  href="https://maps.google.com/?q=Bhubaneswar,Odisha" 
-                  target="_blank" 
+                <a
+                  href="https://maps.google.com/?q=Bhubaneswar,Odisha"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-300 group-hover:text-[#00e6e6] cursor-pointer transition-colors duration-300"
                 >
@@ -242,7 +283,10 @@ const Footer = () => {
           </motion.div>
 
           {/* Quick Links */}
-          <motion.div variants={itemVariants} className="flex flex-col items-center md:items-start">
+          <motion.div
+            variants={itemVariants}
+            className="flex flex-col items-center md:items-start"
+          >
             <h3 className="text-2xl font-bold mb-6 relative">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#00e6e6] to-[#00b3b3]">
                 Navigation
@@ -265,11 +309,13 @@ const Footer = () => {
             </div>
 
             {/* Newsletter - Now placed inside navigation column for better mobile layout */}
-          
           </motion.div>
 
           {/* Social Media */}
-          <motion.div variants={itemVariants} className="flex flex-col items-center md:items-start">
+          <motion.div
+            variants={itemVariants}
+            className="flex flex-col items-center md:items-start"
+          >
             <h3 className="text-2xl font-bold mb-6 relative">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#00e6e6] to-[#00b3b3]">
                 Connect
@@ -291,9 +337,10 @@ const Footer = () => {
                 </a>
               ))}
             </div>
-            
+
             <p className="mt-8 text-gray-400 text-sm max-w-xs text-center md:text-left">
-              Follow me on social media to stay connected and get updates on my latest projects and tech adventures.
+              Follow me on social media to stay connected and get updates on my
+              latest projects and tech adventures.
             </p>
           </motion.div>
         </motion.div>
@@ -317,23 +364,26 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm">
           <p>
             &copy; {new Date().getFullYear()}{" "}
-            <span className="text-[#00e6e6]">subhransumishra</span>. All rights reserved.
+            <span className="text-[#00e6e6]">subhransumishra</span>. All rights
+            reserved.
           </p>
-          <p className="mt-2 md:mt-0">
-            Crafted with
-            <span className="inline-block mx-1 text-red-500">❤</span>
-            and
-            <span className="inline-block mx-1 text-[#00e6e6]">&lt;code/&gt;</span>
-          </p>
+          
         </div>
       </div>
 
       <style jsx>{`
         @keyframes pulse {
-          0%, 100% { transform: scale(1); opacity: 1; }
-          50% { transform: scale(1.5); opacity: 0.5; }
+          0%,
+          100% {
+            transform: scale(1);
+            opacity: 1;
+          }
+          50% {
+            transform: scale(1.5);
+            opacity: 0.5;
+          }
         }
-        
+
         .hover-shadow-glow:hover {
           box-shadow: 0 0 15px rgba(0, 230, 230, 0.5);
         }

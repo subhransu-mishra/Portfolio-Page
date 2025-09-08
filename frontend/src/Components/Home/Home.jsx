@@ -1,19 +1,28 @@
 import "./Home.css";
 import { useState, useEffect } from "react";
+
 const Home = () => {
   const skills = ["DESIGN", "WEB DEVELOPMENT", "APP DEVELOPMENT", "DEPLOYMENT"];
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const scrollToSection = (sectionId) => {
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
+    // Normalize input: strip leading '#', optional trailing '_section', and alias known ids
+    const raw = (sectionId || "").toString();
+    const withoutHash = raw.replace(/^#/, "").replace(/_section$/, "");
+    const aliasMap = { projects: "project" };
+    const base = aliasMap[withoutHash] || withoutHash;
+
+    const target =
+      document.getElementById(`${base}_section`) ||
+      document.getElementById(base);
+
+    if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
     setIsMobileMenuOpen(false);
   };
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -21,17 +30,22 @@ const Home = () => {
   const navItems = [
     { name: "About", href: "#about" },
     { name: "Education", href: "#education" },
-    { name: "Services", href: "#services" },
+    { name: "Skills", href: "#skills" },
     { name: "Projects", href: "#projects" },
   ];
 
   const handleDownloadCV = () => {
-    const link = document.createElement('a');
-    link.href = '/cv.pdf';
-    link.download = 'Subhransu_Sekhar_Mishra_CV.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    try {
+      const link = document.createElement("a");
+      link.href = "/cv.pdf";
+      link.download = "Subhransu_Sekhar_Mishra_CV.pdf";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } catch (e) {
+      // Fallback: open in new tab if download attribute fails
+      window.open("/cv.pdf", "_blank");
+    }
   };
 
   return (
@@ -62,7 +76,8 @@ const Home = () => {
                   href={item.href}
                   onClick={(e) => {
                     e.preventDefault();
-                    scrollToSection(item.href.replace("#", "") + "_section");
+                    // Use normalized scroll helper; works for all sections
+                    scrollToSection(item.href);
                   }}
                   className="relative text-gray-600 hover:text-black transition-all duration-300 ease-out group py-1.5 px-2 lg:px-3 font-medium text-xs lg:text-sm cursor-pointer"
                 >
@@ -74,7 +89,7 @@ const Home = () => {
             </div>
 
             {/* Download CV Button - Desktop */}
-            <button 
+            <button
               onClick={handleDownloadCV}
               className="hidden md:block group relative bg-black hover:bg-gray-800 text-white px-3 lg:px-4 py-2 rounded-full transition-all duration-300 ease-out transform hover:scale-105 hover:shadow-lg font-medium text-xs lg:text-sm"
             >
@@ -135,7 +150,8 @@ const Home = () => {
                 href={item.href}
                 onClick={(e) => {
                   e.preventDefault();
-                  scrollToSection(item.href.replace("#", "") + "_section");
+                  // Unified handler
+                  scrollToSection(item.href);
                 }}
                 className={`block px-3 py-2 text-gray-700 hover:text-black hover:bg-gray-100 rounded-lg transition-all duration-200 font-medium text-sm transform ${
                   isMobileMenuOpen
@@ -211,17 +227,28 @@ const Home = () => {
               </p>
             </div>
           </div>
-          
+
           {/* Contact Button */}
           <div className="flex justify-center mb-8 sm:mb-10 animate-fade-in-up-delay-400">
-            <button 
-              onClick={() => scrollToSection('contact')}
+            <button
+              onClick={() => scrollToSection("contact")}
               className="flex items-center space-x-2 px-6 py-3 rounded-full bg-black text-white font-medium hover:bg-gray-900 transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                />
               </svg>
-              <span className="whitespace-nowrap">Have any Project?</span>
+              <span className="whitespace-nowrap">Have any Project ?</span>
             </button>
           </div>
 

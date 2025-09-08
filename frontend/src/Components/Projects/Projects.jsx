@@ -126,9 +126,10 @@ const ProjectCard = ({ project, onClick }) => {
       whileHover={{ y: -10 }}
       className="bg-white rounded-xl overflow-hidden border-2 border-gray-200 hover:border-black transition-all duration-300 cursor-pointer shadow-sm hover:shadow-xl group"
       onClick={() => onClick(project)}
+      
     >
       {/* Project Image */}
-      <div className="relative h-48 overflow-hidden">
+      <div className="relative h-48 overflow-hidden" id="projects">
         <img
           src={project.images[0]}
           alt={project.title}
