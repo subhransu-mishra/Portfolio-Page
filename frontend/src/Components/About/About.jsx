@@ -67,13 +67,11 @@ const About = () => {
             </h3>
 
             <p className="text-gray-700 leading-relaxed mb-8">
-              I'm currently pursuing a Bachelor's of Science in Information
-              Technology and Management. My passion lies in creating impactful
-              digital solutions through software development, with a focus on
-              both web and app development. Throughout my academic journey, I have
-              worked on multiple projects that have allowed me to enhance my
-              skills in frontend and backend technologies, delivering functional
-              and visually appealing applications.
+            I'm pursuing a <b>Master's in Computer Applications</b>, specializing in <b>full-stack development and cloud-native solutions</b>.
+            My passion lies in architecting scalable digital ecosystems through <b>AI-driven applications</b>, <b>microservices architecture</b>, and <b>DevSecOps methodologies</b>. 
+            Throughout my academic journey, I've delivered responsive web applications and progressive web apps (PWAs) using <b>React</b>, <b>Node.js</b>, and <b>containerized deployment pipelines</b>. 
+            I excel at cross-functional collaboration and translating complex business requirements into intuitive user experiences while implementing CI/CD workflows and real-time data processing. 
+            My expertise spans <b>API orchestration</b>, <b>database optimization</b>, and <b>emerging technologies</b> that position me at the forefront of 2025's software development landscape.
             </p>
 
             {/* Skills section */}
