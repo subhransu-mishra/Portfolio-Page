@@ -76,9 +76,10 @@ const Skills = () => {
     languages: [
       { name: "C", logo: "/C.png", level: 4 },
       { name: "C++", logo: "/C++.png", level: 4 },
+      { name: "JavaScript", logo: "/Javascript.png", level: 5 },
+      {name:"Typescript" , logo:"/typescript.png", level:5},
       { name: "HTML", logo: "/Html.png", level: 5 },
       { name: "CSS", logo: "/Css.png", level: 5 },
-      { name: "JavaScript", logo: "/Javascript.png", level: 5 },
       { name: "Dart", logo: "/dart.png", level: 3 },
     ],
     frameworks: [
