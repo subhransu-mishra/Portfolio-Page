@@ -225,16 +225,13 @@ const Education = () => {
           className="mb-16 text-center"
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-            <span className="text-black">Academic </span>
+           
             <span className="bg-black text-white px-4 py-2 inline-block transform -rotate-1 hover:rotate-0 transition-transform duration-300">
-              Journey
+            Academics
             </span>
           </h1>
           <div className="w-16 h-1 bg-black mx-auto rounded-full mb-4"></div>
-          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-            My educational background that forms the foundation of my technical
-            knowledge and expertise.
-          </p>
+         
         </motion.div>
 
         {/* Education Timeline */}

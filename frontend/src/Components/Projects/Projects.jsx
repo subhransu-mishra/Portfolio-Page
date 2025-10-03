@@ -479,7 +479,7 @@ const Projects = () => {
           className="mb-16 text-center"
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-            <span className="text-black">My </span>
+            
             <span className="bg-black text-white px-4 py-2 inline-block transform -rotate-1 hover:rotate-0 transition-transform duration-300">
               Projects
             </span>

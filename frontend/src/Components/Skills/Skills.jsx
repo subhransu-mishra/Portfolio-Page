@@ -84,12 +84,13 @@ const Skills = () => {
     ],
     frameworks: [
       { name: "React", logo: "/React.png", level: 5 },
-      { name: "Redux", logo: "/Redux.png", level: 4 },
-      { name: "Bootstrap", logo: "/Bootstrap.png", level: 4 },
-      { name: "Tailwind CSS", logo: "/Tailwind.png", level: 5 },
       { name: "Node.js", logo: "/Node.png", level: 4 },
       { name: "Express", logo: "/Express.png", level: 4 },
+      { name: "Redux", logo: "/Redux.png", level: 4 },
       { name: "Flutter", logo: "/Flutter.png", level: 3 },
+      { name: "Bootstrap", logo: "/Bootstrap.png", level: 4 },
+      { name: "Tailwind CSS", logo: "/Tailwind.png", level: 5 },
+      
     ],
     databases: [
       { name: "MongoDB", logo: "/Mongo.png", level: 4 },
@@ -98,12 +99,23 @@ const Skills = () => {
     ],
     tools: [
       { name: "VS Code", logo: "/Vscode.png", level: 5 },
-      { name: "Chatgpt", logo: "/chatgpt (1).png", level: 5 },
+      {name:"Cursor" , logo:"/cursor.png" , level:5},
+      {name:"WindSurf" , logo:"/windsurf.png" , level:5},
       { name: "Postman", logo: "/Postman.png", level: 4 },
       { name: "Git", logo: "/Git.png", level: 4 },
       { name: "GitHub", logo: "/Github.png", level: 4 },
+      {name:"Render" , logo: "/render.png" , level: 4},
+      {name:"Vercel" , logo:"/vercel.png" , level:4},
       { name: "Android Studio", logo: "/Android.png", level: 3 },
     ],
+    AI:[
+      { name: "OpenAI", logo: "/chatgpt (1).png", level: 5 },
+      {name:"Claude" , logo: "/claude-logo.png", level:5},
+      {name:"Gemini", logo:"/gemini.png" , level:5},
+      {name:"Perplexity", logo:"/perplexity.png" , level:5},
+      {name: "Deepseek" , logo:"/deepseek.png" , level:5},
+      {name:"Hugging face" , logo:"/hugging-face.png" , level:5}
+    ]
   };
 
   // Update visible skills when tab changes or search term changes
@@ -205,12 +217,17 @@ const Skills = () => {
             isActive={activeTab === "tools"}
             onClick={() => setActiveTab("tools")}
           />
+          <SkillsTab
+            title="AI"
+            isActive={activeTab === "AI"}
+            onClick={() => setActiveTab("AI")}
+          />
         </div>
 
         {/* Skills display */}
         <div className="min-h-64">
           {visibleSkills.length > 0 ? (
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 justify-items-center">
+            <div className="flex flex-wrap justify-center gap-8">
               {visibleSkills.map((skill, index) => (
                 <SkillCard
                   key={`${activeTab}-${index}`}
