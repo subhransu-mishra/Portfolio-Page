@@ -101,7 +101,7 @@ const About = () => {
                   <h5 className="font-semibold text-gray-800">Education</h5>
                 </div>
                 <p className="text-gray-600 text-sm">
-                  Bachelor's of Science in IT from B.J.B. Autonomous College
+                  Master's in Computer Applications from <b>Trident Academy of Creative Technology</b>
                 </p>
               </div>
 

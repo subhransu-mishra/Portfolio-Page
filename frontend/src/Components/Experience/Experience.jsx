@@ -12,18 +12,9 @@ const ExperienceCard = ({ experience, index, isLast }) => {
       transition={{ duration: 0.6, delay: index * 0.2 }}
       className="relative w-full"
     >
-      {/* Timeline connector - Only show if not the last item */}
-      {!isLast && (
-        <div
-          className={`absolute top-8 bottom-0 w-0.5 bg-gradient-to-b from-black to-gray-300 ${
-            index % 2 === 0 ? "left-6" : "right-6"
-          }`}
-        ></div>
-      )}
-
       {/* Timeline node */}
       <div
-        className={`absolute top-6 w-4 h-4 rounded-full bg-black shadow-lg z-10 ${
+        className={`absolute top-6  bg-black shadow-lg z-10 ${
           index % 2 === 0 ? "left-4" : "right-4"
         }`}
       ></div>
@@ -70,7 +61,7 @@ const ExperienceCard = ({ experience, index, isLast }) => {
         {/* Expandable details section */}
         <div
           className={`
-            overflow-hidden transition-all duration-500 bg-gray-50 border-t border-gray-200
+            overflow-hidden transition-all duration-500 bg-gray-50
             ${isExpanded ? "max-h-96 p-6" : "max-h-0"}
           `}
         >
