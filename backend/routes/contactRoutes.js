@@ -13,6 +13,3 @@ router.post("/", createContact);
 router.get("/", getAllContacts);
 
 module.exports = router;
-router.get("/", getAllContacts);
-
-module.exports = router;

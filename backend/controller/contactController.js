@@ -47,12 +47,19 @@ const validateContactData = (data) => {
 
 const createContact = async (req, res) => {
   try {
-    console.log("Request body:", req.body); // Log the request body for debugging
+    // Check if body exists
+    if (!req.body || Object.keys(req.body).length === 0) {
+      return res.status(400).json({
+        success: false,
+        message: "Request body is empty",
+        errors: ["Please provide contact information"],
+      });
+    }
 
     // Extract data with default values to prevent undefined
     const { name = "", email = "", subject = "", message = "" } = req.body;
 
-    // Validate input data - only email
+    // Validate input data
     const validationErrors = validateContactData({
       name,
       email,
@@ -68,7 +75,7 @@ const createContact = async (req, res) => {
       });
     }
 
-    // Create new contact with safe values - no more trim() checks
+    // Create new contact
     const newContact = new Contact({
       name: name.trim(),
       email: email.toLowerCase().trim(),
@@ -90,8 +97,6 @@ const createContact = async (req, res) => {
       },
     });
   } catch (error) {
-    console.error("Error creating contact:", error);
-
     // Handle mongoose validation errors
     if (error.name === "ValidationError") {
       const validationErrors = Object.values(error.errors).map(
@@ -134,7 +139,7 @@ const getAllContacts = async (req, res) => {
       count: contacts.length,
     });
   } catch (error) {
-    console.error("Error fetching contacts:", error);
+    console.error("❌ Error fetching contacts:", error);
     res.status(500).json({
       success: false,
       message: "Failed to retrieve contacts",
