@@ -209,10 +209,10 @@ const Experience = () => {
     },
 
     {
-      role: "Freelance Developer",
-      company: "Self-Employed",
+      role: "Freelancer",
+      company: "Webnexity ",
       location: "Bhubaneswar, India",
-      duration: "August 2024 - April 2025",
+      duration: "August 2024 - Present",
       type: "Freelance",
       employmentType: "Part-time",
       responsibilities: [

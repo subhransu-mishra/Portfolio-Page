@@ -4,7 +4,6 @@ import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 import { FaGithub } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 
-
 const Home = () => {
   const skills = ["DESIGN", "WEB DEVELOPMENT", "APP DEVELOPMENT", "DEPLOYMENT"];
   const [isScrolled, setIsScrolled] = useState(false);
@@ -224,10 +223,10 @@ const Home = () => {
           <div className="mb-6 sm:mb-8 animate-fade-in-up-delay-200">
             <div className="max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-3xl xl:max-w-4xl mx-auto">
               <p className="text-gray-700 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed">
-                As a tech enthusiast, I don't just code - I engineer ecosystems.
-                My mastery of the MERN stack empowers me to craft end-to-end
-                solutions, from blazing-fast APIs to pixel-perfect user
-                interfaces.
+                Some people see code, I see possibilities. Possibilities to
+                innovate, to solve, to create. Engineering isn’t just what I do;
+                it’s how I see the world. Because every idea deserves
+                exceptional execution.
               </p>
             </div>
           </div>
@@ -238,9 +237,10 @@ const Home = () => {
               onClick={() => scrollToSection("contact")}
               className="flex flex-row justify-center items-center  space-x-2 px-6 py-3 rounded-full bg-black text-white font-medium hover:bg-gray-900 transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
-              
-               
-              <span className="flex items-center">Let's Connect <MdOutlineKeyboardDoubleArrowRight className="ml-2" /></span>
+              <span className="flex items-center">
+                Let's Connect{" "}
+                <MdOutlineKeyboardDoubleArrowRight className="ml-2" />
+              </span>
             </button>
           </div>
 
