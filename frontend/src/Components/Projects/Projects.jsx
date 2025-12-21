@@ -5,10 +5,47 @@ import { motion, AnimatePresence } from "framer-motion";
 const projects = [
   {
     id: "p1",
+    title: "Chat and Video Calling Web App",
+    description:
+      "A modern real-time communication platform enabling seamless chat and video calling experiences with advanced security features, location-based friend discovery, and intelligent fraud detection mechanisms.",
+    technologies: ["React", "Node.js", "Stream","MongoDB", "Express"],
+    category: "Chat and Video Calling",
+    images: [
+      "/project-8-1.png",
+      "/project-8-2.png",
+      "/project-8-3.png",
+      "/project-8-4.png",
+      "/project-8-5.png",
+      "/project-8-6.png",
+      "/project-8-7.png",
+      "/project-8-9.png",
+    ],
+    websiteLink: "https://github.com/subhransu-mishra/QikkMeet",
+    githubLink: "https://github.com/subhransu-mishra/QikkMeet",
+    featured: true,
+    features: [
+      "Secure Authentication with JWT tokens and encrypted password storage",
+      "Real-time chat messaging with instant message delivery and typing indicators",
+      "High-quality video calling with WebRTC technology for peer-to-peer connections",
+      "Location-based friend suggestions using geolocation API for nearby users",
+      "Real-time notifications for friend requests, messages, and call invitations",
+      "Fraud Detection using server-level architecture with pattern recognition and suspicious activity monitoring",
+    ],
+  },
+  {
+    id: "p2",
     title: "Prompt to AI Image Generator",
     description:
       "An AI-powered tool that generates images from text descriptions using advanced machine learning models.",
-    technologies: ["React", "Node.js", "MongoDB", "Clipdrop API", "Express" , "Razorpay" , "Tailwind CSS"],
+    technologies: [
+      "React",
+      "Node.js",
+      "MongoDB",
+      "Clipdrop API",
+      "Express",
+      "Razorpay",
+      "Tailwind CSS",
+    ],
     category: "AI",
     images: [
       "/project-5-1.png",
@@ -30,39 +67,20 @@ const projects = [
       "Modern and Responsive design for all devices",
     ],
   },
+
   {
     id: "p3",
-    title: "Finance Management System",
-    description:
-      "A comprehensive multi-tenant platform for managing company finances, budgeting, petty cash, revenue and expense tracking.",
-    technologies: ["React", "Node.js", "MongoDB", "Express"],
-    category: "Finance",
-    images: [
-      "/project-7-1.png",
-      "/project-7-2.png",
-      "/project-7-3.png",
-      "/project-7-4.png",
-      "/project-7-5.png",
-    ],
-    websiteLink: "https://github.com/subhransu-mishra/PER",
-    githubLink: "https://github.com/subhransu-mishra/PER",
-    featured: true,
-    features: [
-      "Multi-tenant architecture for multiple companies",
-      "Real-time expense and revenue tracking",
-      "Advanced budgeting and financial planning tools",
-      "Automated report generation with charts",
-      "Role-based access control and permissions",
-      "Integration with payment gateways",
-      "Mobile-responsive dashboard",
-    ],
-  },
-  {
-    id: "p2",
     title: "Online Code Editor",
     description:
       "A cloud-based IDE with real-time code execution and multi-language support for efficient development.",
-    technologies: ["React", "Monaco Editor", "Node.js", "Express", "Mongodb" , "Tailwind CSS"],
+    technologies: [
+      "React",
+      "Monaco Editor",
+      "Node.js",
+      "Express",
+      "Mongodb",
+      "Tailwind CSS",
+    ],
     category: "Development Tools",
     images: [
       "/project-1-1.png",
@@ -126,7 +144,6 @@ const ProjectCard = ({ project, onClick }) => {
       whileHover={{ y: -10 }}
       className="bg-white rounded-xl overflow-hidden border-2 border-gray-200 hover:border-black transition-all duration-300 cursor-pointer shadow-sm hover:shadow-xl group"
       onClick={() => onClick(project)}
-      
     >
       {/* Project Image */}
       <div className="relative h-48 overflow-hidden" id="projects">
@@ -479,7 +496,6 @@ const Projects = () => {
           className="mb-16 text-center"
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-            
             <span className="bg-black text-white px-4 py-2 inline-block transform -rotate-1 hover:rotate-0 transition-transform duration-300">
               Projects
             </span>
