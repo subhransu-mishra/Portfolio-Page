@@ -97,11 +97,11 @@ const Footer = () => {
       href: "https://www.linkedin.com/in/subhransu-sekhar-mishra/",
       name: "LinkedIn",
     },
-    {
-      icon: <SiLeetcode size={22} />,
-      href: "https://leetcode.com/u/subhransu_sekhar_mishra/",
-      name: "LeetCode",
-    },
+    // {
+    //   icon: <SiLeetcode size={22} />,
+    //   href: "https://leetcode.com/u/subhransu_sekhar_mishra/",
+    //   name: "LeetCode",
+    // },
     {
       icon: <FaInstagram size={22} />,
       href: "https://www.instagram.com/subhransumishra_/",
