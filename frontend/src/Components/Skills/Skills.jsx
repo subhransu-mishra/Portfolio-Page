@@ -1,5 +1,5 @@
 import React from "react";
-import { IconCloud } from "../../components/ui/interactive-icon-cloud";
+import { IconCloud } from "../../Components/ui/interactive-icon-cloud";
 
 const slugs = [
   "c",
