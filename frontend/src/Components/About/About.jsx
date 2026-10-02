@@ -15,7 +15,7 @@ const About = () => {
 
   return (
     <section
-      className="py-20 bg-white relative overflow-hidden"
+      className="py-20 bg-gray-900 relative overflow-hidden"
       id="about_section"
     >
       {/* Background gradient similar to home section */}
@@ -27,7 +27,7 @@ const About = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section header */}
         <div className="max-w-3xl mx-auto mb-16">
-          <h2 className="text-4xl font-bold text-black mb-6">About Me</h2>
+          <h2 className="text-4xl font-bold text-white mb-6">About Me</h2>
           <div className="w-16 h-1 bg-black mb-8"></div>
         </div>
 
@@ -49,7 +49,7 @@ const About = () => {
                 />
               </div>
               {/* Design element */}
-              <div className="absolute -bottom-4 -right-4 w-32 h-32 border-2 border-black rounded-lg bg-white -z-10"></div>
+              <div className="absolute -bottom-4 -right-4 w-32 h-32 border-2 border-black rounded-lg bg-gray-900 -z-10"></div>
             </div>
           </motion.div>
 
@@ -61,12 +61,12 @@ const About = () => {
             transition={{ duration: 0.6 }}
             className="lg:w-7/12"
           >
-            <h3 className="text-2xl font-bold mb-4 text-black">
+            <h3 className="text-2xl font-bold mb-4 text-white">
               Hello, I'm{" "}
-              <span className="text-gray-700">Subhransu</span>
+              <span className="text-gray-300">Subhransu</span>
             </h3>
 
-            <p className="text-gray-700 leading-relaxed mb-8">
+            <p className="text-gray-300 leading-relaxed mb-8">
             I'm pursuing a <b>Master's in Computer Applications</b>, specializing in <b>full-stack development and cloud-native solutions</b>.
             My passion lies in architecting scalable digital ecosystems through <b>AI-driven applications</b>, <b>microservices architecture</b>, and <b>DevSecOps methodologies</b>. 
             Throughout my academic journey, I've delivered responsive web applications and progressive web apps (PWAs) using <b>React</b>, <b>Node.js</b>, and <b>containerized deployment pipelines</b>. 
@@ -76,14 +76,14 @@ const About = () => {
 
             {/* Skills section */}
             <div className="mb-8">
-              <h4 className="text-lg font-semibold text-black mb-4">
+              <h4 className="text-lg font-semibold text-white mb-4">
                 Technical Skills
               </h4>
               <div className="flex flex-wrap gap-3">
                 {skills.map((skill, index) => (
                   <span
                     key={index}
-                    className="px-4 py-2 bg-gray-100 text-gray-800 rounded-md text-sm font-medium border border-gray-200"
+                    className="px-4 py-2 bg-gray-800 text-gray-200 rounded-md text-sm font-medium border border-gray-700"
                   >
                     {skill}
                   </span>
@@ -93,38 +93,38 @@ const About = () => {
 
             {/* Info cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-gray-50 rounded-lg p-5 border border-gray-200">
+              <div className="bg-gray-900 rounded-lg p-5 border border-gray-700">
                 <div className="flex items-center mb-3">
                   <div className="p-2 bg-gray-200 rounded-lg mr-3">
-                    <FaUserGraduate className="text-gray-700" />
+                    <FaUserGraduate className="text-gray-300" />
                   </div>
-                  <h5 className="font-semibold text-gray-800">Education</h5>
+                  <h5 className="font-semibold text-gray-200">Education</h5>
                 </div>
-                <p className="text-gray-600 text-sm">
+                <p className="text-gray-400 text-sm">
                   Master's in Computer Applications from <b>Trident Academy of Creative Technology</b>
                 </p>
               </div>
 
-              <div className="bg-gray-50 rounded-lg p-5 border border-gray-200">
+              <div className="bg-gray-900 rounded-lg p-5 border border-gray-700">
                 <div className="flex items-center mb-3">
                   <div className="p-2 bg-gray-200 rounded-lg mr-3">
-                    <FaCode className="text-gray-700" />
+                    <FaCode className="text-gray-300" />
                   </div>
-                  <h5 className="font-semibold text-gray-800">Domain</h5>
+                  <h5 className="font-semibold text-gray-200">Domain</h5>
                 </div>
-                <p className="text-gray-600 text-sm">
+                <p className="text-gray-400 text-sm">
                   Software Development (Web and Application Development)
                 </p>
               </div>
 
-              <div className="bg-gray-50 rounded-lg p-5 border border-gray-200">
+              <div className="bg-gray-900 rounded-lg p-5 border border-gray-700">
                 <div className="flex items-center mb-3">
                   <div className="p-2 bg-gray-200 rounded-lg mr-3">
-                    <FaBriefcase className="text-gray-700" />
+                    <FaBriefcase className="text-gray-300" />
                   </div>
-                  <h5 className="font-semibold text-gray-800">Experience</h5>
+                  <h5 className="font-semibold text-gray-200">Experience</h5>
                 </div>
-                <p className="text-gray-600 text-sm">
+                <p className="text-gray-400 text-sm">
                   Worked on 25+ projects in software development
                 </p>
               </div>

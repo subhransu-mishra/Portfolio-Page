@@ -52,7 +52,7 @@ const Loader = ({ onLoadingComplete }) => {
       initial={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="fixed inset-0 z-[9999] flex items-center justify-center bg-gradient-to-br from-green-100 via-yellow-50 to-green-200 overflow-hidden"
+      className="fixed inset-0 z-[9999] flex items-center justify-center bg-black overflow-hidden"
     >
       {/* Animated background blobs */}
       <div className="absolute inset-0 overflow-hidden">
@@ -93,7 +93,7 @@ const Loader = ({ onLoadingComplete }) => {
               transition={{ duration: 0.5, ease: "easeInOut" }}
               className="absolute"
             >
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black text-center whitespace-nowrap px-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white text-center whitespace-nowrap px-4">
                 {loadingTexts[currentTextIndex].split(" ").map((word, i) => (
                   <motion.span
                     key={i}
@@ -131,7 +131,7 @@ const Loader = ({ onLoadingComplete }) => {
             transition={{ delay: 0.5 }}
             className="mt-4 text-center"
           >
-            <span className="text-lg sm:text-xl font-semibold text-black">
+            <span className="text-lg sm:text-xl font-semibold text-white">
               {Math.round(progress)}%
             </span>
           </motion.div>
@@ -166,7 +166,7 @@ const Loader = ({ onLoadingComplete }) => {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 0.5 }}
-          className="text-gray-600 text-sm sm:text-base md:text-lg font-medium text-center px-4"
+          className="text-gray-400 text-sm sm:text-base md:text-lg font-medium text-center px-4"
         >
           Engineering Digital Excellence
         </motion.p>

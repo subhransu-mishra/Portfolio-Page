@@ -142,7 +142,7 @@ const ProjectCard = ({ project, onClick }) => {
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
       whileHover={{ y: -10 }}
-      className="bg-white rounded-xl overflow-hidden border-2 border-gray-200 hover:border-black transition-all duration-300 cursor-pointer shadow-sm hover:shadow-xl group"
+      className="bg-gray-900 rounded-xl overflow-hidden border-2 border-gray-700 hover:border-black transition-all duration-300 cursor-pointer shadow-sm hover:shadow-xl group"
       onClick={() => onClick(project)}
     >
       {/* Project Image */}
@@ -163,7 +163,7 @@ const ProjectCard = ({ project, onClick }) => {
       {/* Project Details */}
       <div className="p-6">
         <div className="flex items-center justify-between mb-3">
-          <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-gray-100 text-black border border-gray-200">
+          <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-gray-800 text-white border border-gray-700">
             {project.category}
           </span>
           <div className="flex space-x-2">
@@ -171,7 +171,7 @@ const ProjectCard = ({ project, onClick }) => {
               href={project.websiteLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-black transition-colors"
+              className="text-gray-400 hover:text-white transition-colors"
               onClick={(e) => e.stopPropagation()}
             >
               <svg
@@ -192,7 +192,7 @@ const ProjectCard = ({ project, onClick }) => {
               href={project.githubLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-black transition-colors"
+              className="text-gray-400 hover:text-white transition-colors"
               onClick={(e) => e.stopPropagation()}
             >
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -202,18 +202,18 @@ const ProjectCard = ({ project, onClick }) => {
           </div>
         </div>
 
-        <h3 className="text-xl font-bold text-black mb-2 group-hover:text-gray-700 transition-colors">
+        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-gray-300 transition-colors">
           {project.title}
         </h3>
 
-        <p className="text-gray-600 mb-4 line-clamp-2">{project.description}</p>
+        <p className="text-gray-400 mb-4 line-clamp-2">{project.description}</p>
 
         {/* Tech stack */}
         <div className="flex flex-wrap gap-2">
           {project.technologies.slice(0, 3).map((tech, idx) => (
             <span
               key={idx}
-              className="px-2 py-1 text-xs font-medium rounded bg-gray-100 text-gray-700 border border-gray-200"
+              className="px-2 py-1 text-xs font-medium rounded bg-gray-800 text-gray-300 border border-gray-700"
             >
               {tech}
             </span>
@@ -271,19 +271,19 @@ const ProjectDetailModal = ({ project, onClose }) => {
         exit={{ opacity: 0, scale: 0.9 }}
         transition={{ duration: 0.3 }}
         ref={modalRef}
-        className="bg-white rounded-xl w-full max-w-4xl max-h-[90vh] overflow-y-auto border-2 border-gray-200"
+        className="bg-gray-900 rounded-xl w-full max-w-4xl max-h-[90vh] overflow-y-auto border-2 border-gray-700"
       >
         {/* Modal header */}
-        <div className="sticky top-0 bg-white z-10 p-6 border-b border-gray-200 flex justify-between items-center">
+        <div className="sticky top-0 bg-gray-900 z-10 p-6 border-b border-gray-700 flex justify-between items-center">
           <div>
-            <h2 className="text-2xl font-bold text-black">{project.title}</h2>
-            <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-gray-100 text-black border border-gray-200 mt-2">
+            <h2 className="text-2xl font-bold text-white">{project.title}</h2>
+            <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-gray-800 text-white border border-gray-700 mt-2">
               {project.category}
             </span>
           </div>
           <button
             onClick={onClose}
-            className="text-gray-400 hover:text-black transition-colors p-2"
+            className="text-gray-400 hover:text-white transition-colors p-2"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -337,8 +337,8 @@ const ProjectDetailModal = ({ project, onClose }) => {
                     onClick={() => setCurrentImageIndex(index)}
                     className={`w-2 h-2 rounded-full transition-all duration-300 ${
                       index === currentImageIndex
-                        ? "bg-white w-6"
-                        : "bg-white/50 hover:bg-white/80"
+                        ? "bg-gray-900 w-6"
+                        : "bg-gray-900/50 hover:bg-gray-900/80"
                     }`}
                   />
                 ))}
@@ -349,15 +349,15 @@ const ProjectDetailModal = ({ project, onClose }) => {
           {/* Project info */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2">
-              <h3 className="text-xl font-bold text-black mb-4">
+              <h3 className="text-xl font-bold text-white mb-4">
                 Project Overview
               </h3>
-              <p className="text-gray-700 mb-6">{project.description}</p>
+              <p className="text-gray-300 mb-6">{project.description}</p>
 
-              <h3 className="text-xl font-bold text-black mb-4">
+              <h3 className="text-xl font-bold text-white mb-4">
                 Key Features
               </h3>
-              <ul className="list-disc list-inside text-gray-700 space-y-2 mb-6">
+              <ul className="list-disc list-inside text-gray-300 space-y-2 mb-6">
                 {project.features.map((feature, idx) => (
                   <li key={idx} className="flex items-start">
                     <span className="inline-block w-1.5 h-1.5 bg-black rounded-full mt-2 mr-2 flex-shrink-0"></span>
@@ -366,10 +366,10 @@ const ProjectDetailModal = ({ project, onClose }) => {
                 ))}
               </ul>
 
-              <h3 className="text-xl font-bold text-black mb-4">
+              <h3 className="text-xl font-bold text-white mb-4">
                 Technical Implementation
               </h3>
-              <p className="text-gray-700 mb-4">
+              <p className="text-gray-300 mb-4">
                 This project showcases modern development practices with clean
                 code architecture, responsive design principles, and optimal
                 performance across all devices. Built using industry-standard
@@ -378,21 +378,21 @@ const ProjectDetailModal = ({ project, onClose }) => {
               </p>
             </div>
 
-            <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
-              <h3 className="text-lg font-bold text-black mb-4">
+            <div className="bg-gray-900 p-6 rounded-xl border border-gray-700">
+              <h3 className="text-lg font-bold text-white mb-4">
                 Project Details
               </h3>
 
               <div className="space-y-4">
                 <div>
-                  <h4 className="text-sm font-medium text-gray-600">
+                  <h4 className="text-sm font-medium text-gray-400">
                     Technologies Used
                   </h4>
                   <div className="flex flex-wrap gap-2 mt-2">
                     {project.technologies.map((tech, idx) => (
                       <span
                         key={idx}
-                        className="px-3 py-1 text-xs font-medium rounded-full bg-white text-black border border-gray-200"
+                        className="px-3 py-1 text-xs font-medium rounded-full bg-gray-900 text-white border border-gray-700"
                       >
                         {tech}
                       </span>
@@ -401,7 +401,7 @@ const ProjectDetailModal = ({ project, onClose }) => {
                 </div>
 
                 <div>
-                  <h4 className="text-sm font-medium text-gray-600">
+                  <h4 className="text-sm font-medium text-gray-400">
                     Project Links
                   </h4>
                   <div className="flex flex-col space-y-3 mt-3">
@@ -417,7 +417,7 @@ const ProjectDetailModal = ({ project, onClose }) => {
                       href={project.githubLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-white border-2 border-gray-200 text-black px-4 py-3 rounded-lg text-center hover:border-black transition-colors"
+                      className="bg-gray-900 border-2 border-gray-700 text-white px-4 py-3 rounded-lg text-center hover:border-black transition-colors"
                     >
                       View Source Code
                     </a>
@@ -441,7 +441,7 @@ const FilterButton = ({ active, onClick, children }) => (
     className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 border-2 ${
       active
         ? "bg-black text-white border-black shadow-lg"
-        : "bg-white text-gray-700 border-gray-200 hover:border-black"
+        : "bg-gray-900 text-gray-300 border-gray-700 hover:border-black"
     }`}
   >
     {children}
@@ -469,11 +469,11 @@ const Projects = () => {
 
   return (
     <div
-      className="py-20 bg-gradient-to-br from-green-100 via-yellow-50 to-green-200 relative overflow-hidden"
+      className="py-20 bg-black relative overflow-hidden"
       id="project_section"
     >
       {/* Notebook paper background */}
-      <div className="absolute inset-0 bg-white bg-notebook-paper"></div>
+      <div className="absolute inset-0 bg-gray-900 bg-notebook-paper"></div>
 
       {/* Background decorations matching home page */}
       <div className="absolute inset-0 overflow-hidden">
@@ -501,7 +501,7 @@ const Projects = () => {
             </span>
           </h1>
           <div className="w-16 h-1 bg-black mx-auto rounded-full mb-4"></div>
-          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
             Explore my recent work and projects that showcase my skills and
             expertise in web and application development.
           </p>
@@ -540,19 +540,19 @@ const Projects = () => {
           className="max-w-4xl mx-auto mt-20"
         >
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-white rounded-xl p-6 shadow-sm border-2 border-gray-200 hover:border-black transition-colors text-center">
-              <div className="text-4xl font-bold text-black mb-2">25+</div>
-              <div className="text-gray-600">Projects Completed</div>
+            <div className="bg-gray-900 rounded-xl p-6 shadow-sm border-2 border-gray-700 hover:border-black transition-colors text-center">
+              <div className="text-4xl font-bold text-white mb-2">25+</div>
+              <div className="text-gray-400">Projects Completed</div>
             </div>
 
-            <div className="bg-white rounded-xl p-6 shadow-sm border-2 border-gray-200 hover:border-black transition-colors text-center">
-              <div className="text-4xl font-bold text-black mb-2">10+</div>
-              <div className="text-gray-600">Technologies Used</div>
+            <div className="bg-gray-900 rounded-xl p-6 shadow-sm border-2 border-gray-700 hover:border-black transition-colors text-center">
+              <div className="text-4xl font-bold text-white mb-2">10+</div>
+              <div className="text-gray-400">Technologies Used</div>
             </div>
 
-            <div className="bg-white rounded-xl p-6 shadow-sm border-2 border-gray-200 hover:border-black transition-colors text-center">
-              <div className="text-4xl font-bold text-black mb-2">100%</div>
-              <div className="text-gray-600">Client Satisfaction</div>
+            <div className="bg-gray-900 rounded-xl p-6 shadow-sm border-2 border-gray-700 hover:border-black transition-colors text-center">
+              <div className="text-4xl font-bold text-white mb-2">100%</div>
+              <div className="text-gray-400">Client Satisfaction</div>
             </div>
           </div>
         </motion.div>

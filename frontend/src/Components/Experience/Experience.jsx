@@ -23,7 +23,7 @@ const ExperienceCard = ({ experience, index, isLast }) => {
       <div
         className={`
           ${index % 2 === 0 ? "mr-16" : "ml-16"} mb-16 
-          bg-white border-2 border-gray-200 rounded-xl overflow-hidden
+          bg-gray-900 border-2 border-gray-700 rounded-xl overflow-hidden
           transition-all duration-500 cursor-pointer hover:border-black hover:shadow-lg
           ${isExpanded ? "shadow-xl border-black" : ""}
         `}
@@ -36,22 +36,22 @@ const ExperienceCard = ({ experience, index, isLast }) => {
               <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-black text-white">
                 {experience.duration}
               </span>
-              <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-gray-100 text-black border border-gray-200">
+              <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-gray-800 text-white border border-gray-700">
                 {experience.type}
               </span>
             </div>
-            <h3 className="text-xl md:text-2xl font-bold text-black mb-1">
+            <h3 className="text-xl md:text-2xl font-bold text-white mb-1">
               {experience.role}
             </h3>
-            <h4 className="text-lg text-gray-700 font-medium mb-1">
+            <h4 className="text-lg text-gray-300 font-medium mb-1">
               {experience.company}
             </h4>
-            <p className="text-gray-600 text-sm">{experience.location}</p>
+            <p className="text-gray-400 text-sm">{experience.location}</p>
           </div>
 
           <div className="mt-4 md:mt-0 flex items-center">
             <div className="flex items-center gap-2">
-              <span className="text-black font-medium px-3 py-1 bg-gray-100 rounded-lg border border-gray-200">
+              <span className="text-white font-medium px-3 py-1 bg-gray-800 rounded-lg border border-gray-700">
                 {experience.employmentType}
               </span>
             </div>
@@ -61,13 +61,13 @@ const ExperienceCard = ({ experience, index, isLast }) => {
         {/* Expandable details section */}
         <div
           className={`
-            overflow-hidden transition-all duration-500 bg-gray-50
+            overflow-hidden transition-all duration-500 bg-gray-900
             ${isExpanded ? "max-h-96 p-6" : "max-h-0"}
           `}
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <h5 className="text-black font-medium mb-3 flex items-center gap-2">
+              <h5 className="text-white font-medium mb-3 flex items-center gap-2">
                 <svg
                   className="w-4 h-4"
                   fill="none"
@@ -83,7 +83,7 @@ const ExperienceCard = ({ experience, index, isLast }) => {
                 </svg>
                 Key Responsibilities
               </h5>
-              <ul className="space-y-2 text-gray-700">
+              <ul className="space-y-2 text-gray-300">
                 {experience.responsibilities.map((responsibility, idx) => (
                   <li key={idx} className="text-sm flex items-start">
                     <span className="inline-block w-1.5 h-1.5 bg-black rounded-full mt-2 mr-2"></span>
@@ -94,7 +94,7 @@ const ExperienceCard = ({ experience, index, isLast }) => {
             </div>
 
             <div>
-              <h5 className="text-black font-medium mb-3 flex items-center gap-2">
+              <h5 className="text-white font-medium mb-3 flex items-center gap-2">
                 <svg
                   className="w-4 h-4"
                   fill="none"
@@ -114,7 +114,7 @@ const ExperienceCard = ({ experience, index, isLast }) => {
                 {experience.techStack.map((tech, idx) => (
                   <span
                     key={idx}
-                    className="px-3 py-1 text-xs font-medium rounded-full bg-gray-100 text-black border border-gray-200"
+                    className="px-3 py-1 text-xs font-medium rounded-full bg-gray-800 text-white border border-gray-700"
                   >
                     {tech}
                   </span>
@@ -125,7 +125,7 @@ const ExperienceCard = ({ experience, index, isLast }) => {
 
           {experience.achievements && experience.achievements.length > 0 && (
             <div className="mt-6">
-              <h5 className="text-black font-medium mb-3 flex items-center gap-2">
+              <h5 className="text-white font-medium mb-3 flex items-center gap-2">
                 <svg
                   className="w-4 h-4"
                   fill="none"
@@ -141,7 +141,7 @@ const ExperienceCard = ({ experience, index, isLast }) => {
                 </svg>
                 Key Achievements
               </h5>
-              <ul className="space-y-2 text-gray-700">
+              <ul className="space-y-2 text-gray-300">
                 {experience.achievements.map((achievement, idx) => (
                   <li key={idx} className="text-sm flex items-start">
                     <span className="inline-block w-1.5 h-1.5 bg-black rounded-full mt-2 mr-2"></span>
@@ -153,9 +153,9 @@ const ExperienceCard = ({ experience, index, isLast }) => {
           )}
 
           {experience.description && (
-            <div className="mt-4 p-4 bg-white rounded-lg border border-gray-200">
-              <h5 className="text-black font-medium mb-2">About</h5>
-              <p className="text-gray-700 text-sm italic">
+            <div className="mt-4 p-4 bg-gray-900 rounded-lg border border-gray-700">
+              <h5 className="text-white font-medium mb-2">About</h5>
+              <p className="text-gray-300 text-sm italic">
                 "{experience.description}"
               </p>
             </div>
@@ -163,7 +163,7 @@ const ExperienceCard = ({ experience, index, isLast }) => {
         </div>
 
         {/* Expand indicator */}
-        <div className="absolute bottom-4 right-6 text-gray-400 hover:text-black transition-colors">
+        <div className="absolute bottom-4 right-6 text-gray-400 hover:text-white transition-colors">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className={`h-5 w-5 transition-transform duration-300 ${
@@ -234,11 +234,11 @@ const Experience = () => {
 
   return (
     <div
-      className="py-20 bg-white relative overflow-hidden"
+      className="py-20 bg-gray-900 relative overflow-hidden"
       id="experience_section"
     >
       {/* Notebook paper background */}
-      <div className="absolute inset-0 bg-white bg-notebook-paper"></div>
+      <div className="absolute inset-0 bg-gray-900 bg-notebook-paper"></div>
 
       {/* Background decorations */}
       <div className="absolute inset-0 overflow-hidden">
@@ -261,13 +261,13 @@ const Experience = () => {
           className="mb-16 text-center"
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-            <span className="text-black">Professional </span>
+            <span className="text-white">Professional </span>
             <span className="bg-black text-white px-4 py-2 inline-block transform -rotate-1 hover:rotate-0 transition-transform duration-300">
               Journey
             </span>
           </h1>
           <div className="w-16 h-1 bg-black mx-auto rounded-full mb-4"></div>
-          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
             My work experience that showcases my growth, skills, and
             contributions in the tech industry.
           </p>
@@ -298,24 +298,24 @@ const Experience = () => {
         className="max-w-4xl mx-auto mt-20 px-6 relative z-10"
       >
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-          <div className="bg-white rounded-xl p-6 shadow-sm border-2 border-gray-200 hover:border-black transition-colors text-center">
-            <div className="text-4xl font-bold text-black mb-2">2+</div>
-            <div className="text-gray-600">Years of Experience</div>
+          <div className="bg-gray-900 rounded-xl p-6 shadow-sm border-2 border-gray-700 hover:border-black transition-colors text-center">
+            <div className="text-4xl font-bold text-white mb-2">2+</div>
+            <div className="text-gray-400">Years of Experience</div>
           </div>
 
-          <div className="bg-white rounded-xl p-6 shadow-sm border-2 border-gray-200 hover:border-black transition-colors text-center">
-            <div className="text-4xl font-bold text-black mb-2">15+</div>
-            <div className="text-gray-600">Projects Completed</div>
+          <div className="bg-gray-900 rounded-xl p-6 shadow-sm border-2 border-gray-700 hover:border-black transition-colors text-center">
+            <div className="text-4xl font-bold text-white mb-2">15+</div>
+            <div className="text-gray-400">Projects Completed</div>
           </div>
 
-          <div className="bg-white rounded-xl p-6 shadow-sm border-2 border-gray-200 hover:border-black transition-colors text-center">
-            <div className="text-4xl font-bold text-black mb-2">10+</div>
-            <div className="text-gray-600">Technologies Mastered</div>
+          <div className="bg-gray-900 rounded-xl p-6 shadow-sm border-2 border-gray-700 hover:border-black transition-colors text-center">
+            <div className="text-4xl font-bold text-white mb-2">10+</div>
+            <div className="text-gray-400">Technologies Mastered</div>
           </div>
 
-          <div className="bg-white rounded-xl p-6 shadow-sm border-2 border-gray-200 hover:border-black transition-colors text-center">
-            <div className="text-4xl font-bold text-black mb-2">100%</div>
-            <div className="text-gray-600">Client Satisfaction</div>
+          <div className="bg-gray-900 rounded-xl p-6 shadow-sm border-2 border-gray-700 hover:border-black transition-colors text-center">
+            <div className="text-4xl font-bold text-white mb-2">100%</div>
+            <div className="text-gray-400">Client Satisfaction</div>
           </div>
         </div>
       </motion.div>

@@ -15,8 +15,8 @@ const EducationCard = ({ education, index }) => {
     >
       <div
         className={`
-          bg-white rounded-xl overflow-hidden transition-all duration-300
-          border-2 border-gray-200 hover:border-black mb-8 shadow-sm hover:shadow-lg
+          bg-gray-900 rounded-xl overflow-hidden transition-all duration-300
+          border-2 border-gray-700 hover:border-black mb-8 shadow-sm hover:shadow-lg
           ${isExpanded ? "shadow-xl border-black" : ""}
         `}
         onClick={() => setIsExpanded(!isExpanded)}
@@ -27,7 +27,7 @@ const EducationCard = ({ education, index }) => {
             <div className="flex items-start space-x-4">
               {/* Icon */}
               <div className="mt-1">
-                <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-black border-2 border-gray-200">
+                <div className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center text-white border-2 border-gray-700">
                   <FaGraduationCap size={24} />
                 </div>
               </div>
@@ -37,10 +37,10 @@ const EducationCard = ({ education, index }) => {
                 <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-black text-white mb-2">
                   {education.duration}
                 </span>
-                <h3 className="text-xl font-bold text-black mb-1">
+                <h3 className="text-xl font-bold text-white mb-1">
                   {education.degree}
                 </h3>
-                <h4 className="text-gray-600 font-medium">
+                <h4 className="text-gray-400 font-medium">
                   {education.institution}
                 </h4>
               </div>
@@ -48,8 +48,8 @@ const EducationCard = ({ education, index }) => {
 
             {/* Grade */}
             <div className="hidden md:block">
-              <div className="flex items-center px-4 py-2 bg-gray-100 rounded-lg border border-gray-200">
-                <span className="text-black font-medium">
+              <div className="flex items-center px-4 py-2 bg-gray-800 rounded-lg border border-gray-700">
+                <span className="text-white font-medium">
                   {education.grade}
                 </span>
               </div>
@@ -58,8 +58,8 @@ const EducationCard = ({ education, index }) => {
 
           {/* Mobile view grade */}
           <div className="md:hidden mt-3">
-            <div className="inline-flex items-center px-3 py-1 bg-gray-100 rounded-lg border border-gray-200">
-              <span className="text-black font-medium text-sm">
+            <div className="inline-flex items-center px-3 py-1 bg-gray-800 rounded-lg border border-gray-700">
+              <span className="text-white font-medium text-sm">
                 {education.grade}
               </span>
             </div>
@@ -67,7 +67,7 @@ const EducationCard = ({ education, index }) => {
 
           {/* Expand indicator */}
           <div className="flex justify-center mt-4">
-            <button className="text-gray-400 hover:text-black transition-colors">
+            <button className="text-gray-400 hover:text-white transition-colors">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className={`h-6 w-6 transition-transform duration-300 ${
@@ -91,17 +91,17 @@ const EducationCard = ({ education, index }) => {
         {/* Expandable content */}
         <div
           className={`
-            overflow-hidden transition-all duration-500 bg-gray-50 border-t border-gray-200
+            overflow-hidden transition-all duration-500 bg-gray-900 border-t border-gray-700
             ${isExpanded ? "max-h-[500px] p-6" : "max-h-0"}
           `}
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <div className="flex items-center mb-3">
-                <FaBookOpen className="text-black mr-2" />
-                <h5 className="font-semibold text-black">Coursework</h5>
+                <FaBookOpen className="text-white mr-2" />
+                <h5 className="font-semibold text-white">Coursework</h5>
               </div>
-              <ul className="space-y-2 text-gray-700">
+              <ul className="space-y-2 text-gray-300">
                 {education.courses.map((course, idx) => (
                   <li key={idx} className="flex items-start">
                     <span className="inline-block w-1.5 h-1.5 bg-black rounded-full mt-2 mr-2"></span>
@@ -113,10 +113,10 @@ const EducationCard = ({ education, index }) => {
 
             <div>
               <div className="flex items-center mb-3">
-                <FaMedal className="text-black mr-2" />
-                <h5 className="font-semibold text-black">Achievements</h5>
+                <FaMedal className="text-white mr-2" />
+                <h5 className="font-semibold text-white">Achievements</h5>
               </div>
-              <ul className="space-y-2 text-gray-700">
+              <ul className="space-y-2 text-gray-300">
                 {education.achievements.map((achievement, idx) => (
                   <li key={idx} className="flex items-start">
                     <span className="inline-block w-1.5 h-1.5 bg-black rounded-full mt-2 mr-2"></span>
@@ -128,8 +128,8 @@ const EducationCard = ({ education, index }) => {
           </div>
 
           {education.description && (
-            <div className="mt-6 p-4 bg-white rounded-lg border border-gray-200">
-              <p className="text-gray-700 italic">"{education.description}"</p>
+            <div className="mt-6 p-4 bg-gray-900 rounded-lg border border-gray-700">
+              <p className="text-gray-300 italic">"{education.description}"</p>
             </div>
           )}
         </div>
@@ -198,11 +198,11 @@ const Education = () => {
 
   return (
     <div
-      className="py-20 bg-white relative overflow-hidden"
+      className="py-20 bg-gray-900 relative overflow-hidden"
       id="education_section"
     >
       {/* Notebook paper background */}
-      <div className="absolute inset-0 bg-white bg-notebook-paper"></div>
+      <div className="absolute inset-0 bg-gray-900 bg-notebook-paper"></div>
 
       {/* Background decorations similar to home */}
       <div className="absolute inset-0 overflow-hidden">
@@ -251,19 +251,19 @@ const Education = () => {
         className="max-w-4xl mx-auto mt-16 px-6 relative z-10"
       >
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-white rounded-xl p-6 shadow-sm border-2 border-gray-200 hover:border-black transition-colors text-center">
-            <div className="text-4xl font-bold text-black mb-2">5.0</div>
-            <div className="text-gray-600">Years of Academic Excellence</div>
+          <div className="bg-gray-900 rounded-xl p-6 shadow-sm border-2 border-gray-700 hover:border-black transition-colors text-center">
+            <div className="text-4xl font-bold text-white mb-2">5.0</div>
+            <div className="text-gray-400">Years of Academic Excellence</div>
           </div>
 
-          <div className="bg-white rounded-xl p-6 shadow-sm border-2 border-gray-200 hover:border-black transition-colors text-center">
-            <div className="text-4xl font-bold text-black mb-2">7.3+</div>
-            <div className="text-gray-600">CGPA Throughout Graduation</div>
+          <div className="bg-gray-900 rounded-xl p-6 shadow-sm border-2 border-gray-700 hover:border-black transition-colors text-center">
+            <div className="text-4xl font-bold text-white mb-2">7.3+</div>
+            <div className="text-gray-400">CGPA Throughout Graduation</div>
           </div>
 
-          <div className="bg-white rounded-xl p-6 shadow-sm border-2 border-gray-200 hover:border-black transition-colors text-center">
-            <div className="text-4xl font-bold text-black mb-2">15+</div>
-            <div className="text-gray-600">Academic & other Achievements</div>
+          <div className="bg-gray-900 rounded-xl p-6 shadow-sm border-2 border-gray-700 hover:border-black transition-colors text-center">
+            <div className="text-4xl font-bold text-white mb-2">15+</div>
+            <div className="text-gray-400">Academic & other Achievements</div>
           </div>
         </div>
       </motion.div>
