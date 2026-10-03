@@ -316,7 +316,8 @@ const ShaderBackground = () => {
     ]);
 
     const resize = () => {
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      // Cap at 1.0 to massively improve performance on high-density displays (Retina/Mobile)
+      const dpr = Math.min(window.devicePixelRatio || 1, 1.0);
       canvas.width = canvas.clientWidth * dpr;
       canvas.height = canvas.clientHeight * dpr;
       gl.viewport(0, 0, canvas.width, canvas.height);
@@ -327,9 +328,17 @@ const ShaderBackground = () => {
 
     let animationFrameId;
     const start = performance.now();
+    let isVisible = true;
+
+    // Pause rendering when scrolled out of view to save GPU and CPU
+    const observer = new IntersectionObserver(([entry]) => {
+      isVisible = entry.isIntersecting;
+    });
+    observer.observe(canvas);
 
     const render = (time) => {
-      if (document.hidden) {
+      // Skip heavy drawing if not visible or document is hidden
+      if (document.hidden || !isVisible) {
         animationFrameId = requestAnimationFrame(render);
         return;
       }
@@ -355,6 +364,7 @@ const ShaderBackground = () => {
 
     return () => {
       window.removeEventListener('resize', resize);
+      observer.disconnect();
       cancelAnimationFrame(animationFrameId);
     };
   }, []);

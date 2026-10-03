@@ -154,12 +154,13 @@ const Home = () => {
 
           {/* Right Action Button */}
           <div className="hidden md:block">
-            <button
-              onClick={() => scrollToSection("contact")}
-              className="bg-black hover:bg-gray-800 text-white px-6 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 shadow-xl"
+            <a
+              href="/cv.pdf"
+              download="cv.pdf"
+              className="inline-block bg-black hover:bg-gray-800 text-white px-6 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 shadow-xl"
             >
-              Start a project
-            </button>
+              Download CV
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -214,7 +215,7 @@ const Home = () => {
           </div>
 
           {/* Links */}
-          <div className="flex flex-col px-8 py-2 overflow-y-auto">
+          <div className="flex flex-col px-8 py-2 overflow-y-auto flex-grow">
             {[
               { name: "HOME", href: "#home" },
               { name: "ABOUT", href: "#about" },
@@ -234,6 +235,18 @@ const Home = () => {
                 {item.name}
               </a>
             ))}
+
+            {/* Mobile Download CV Button */}
+            <div className="mt-10 mb-8">
+              <a
+                href="/cv.pdf"
+                download="cv.pdf"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="flex justify-center w-full bg-[#ccff00] text-black px-6 py-4 rounded-xl font-bold uppercase tracking-widest text-sm hover:bg-[#b8e600] transition-colors shadow-lg"
+              >
+                Download CV
+              </a>
+            </div>
           </div>
         </motion.div>
       </div>
