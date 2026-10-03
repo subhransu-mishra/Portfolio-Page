@@ -1,140 +1,121 @@
 import React from "react";
-import { FaUserGraduate, FaCode, FaBriefcase } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { FaUserGraduate, FaCode, FaBriefcase } from "react-icons/fa";
 
 const About = () => {
-  const skills = [
-    "React",
-    "Typescript",
-    "Express.js",
-    "MongoDB",
-    
-    "Tailwind CSS",
-    "C++",
-  ];
-
   return (
     <section
-      className="py-20 bg-gray-900 relative overflow-hidden"
+      className="py-32 bg-[#050505] relative overflow-hidden flex flex-col justify-center min-h-screen"
       id="about_section"
     >
-      {/* Background gradient similar to home section */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute bottom-0 right-0 w-1/3 h-1/2 bg-gradient-to-t from-lime-200/20 to-transparent rounded-full blur-2xl"></div>
-        <div className="absolute top-1/4 left-0 w-1/4 h-1/3 bg-gradient-to-r from-lime-200/10 to-transparent rounded-full blur-xl"></div>
-      </div>
+      {/* Background Ambient Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] md:w-[40vw] md:h-[40vw] bg-white opacity-[0.02] rounded-full blur-[120px] pointer-events-none"></div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section header */}
-        <div className="max-w-3xl mx-auto mb-16">
-          <h2 className="text-4xl font-bold text-white mb-6">About Me</h2>
-          <div className="w-16 h-1 bg-black mb-8"></div>
+      <div className="container mx-auto px-6 lg:px-12 relative z-10">
+        
+        {/* Massive Headline */}
+        <div className="max-w-[75rem] mx-auto text-center mb-24">
+          <motion.h2 
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="text-4xl md:text-5xl lg:text-[4rem] xl:text-[4.5rem] leading-[1.1] font-black uppercase text-white tracking-tight"
+          >
+            I BUILD SCALABLE, CLOUD-NATIVE AND AI-POWERED 
+            WEB APPLICATIONS WITH A FOCUS ON CLEAN 
+            ENGINEERING, PERFORMANCE, AND USER EXPERIENCE.
+          </motion.h2>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-12 items-center">
-          {/* Profile image */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="lg:w-5/12"
-          >
-            <div className="relative">
-              <div className="overflow-hidden rounded-lg shadow-xl">
-                <img
-                  src="/about-me.png"
-                  alt="Subhransu - Software Developer"
-                  className="w-full h-auto object-cover"
-                />
-              </div>
-              {/* Design element */}
-              <div className="absolute -bottom-4 -right-4 w-32 h-32 border-2 border-black rounded-lg bg-gray-900 -z-10"></div>
-            </div>
-          </motion.div>
-
-          {/* Content */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="lg:w-7/12"
-          >
-            <h3 className="text-2xl font-bold mb-4 text-white">
-              Hello, I'm{" "}
-              <span className="text-gray-300">Subhransu</span>
-            </h3>
-
-            <p className="text-gray-300 leading-relaxed mb-8">
-            I'm pursuing a <b>Master's in Computer Applications</b>, specializing in <b>full-stack development and cloud-native solutions</b>.
-            My passion lies in architecting scalable digital ecosystems through <b>AI-driven applications</b>, <b>microservices architecture</b>, and <b>DevSecOps methodologies</b>. 
-            Throughout my academic journey, I've delivered responsive web applications and progressive web apps (PWAs) using <b>React</b>, <b>Node.js</b>, and <b>containerized deployment pipelines</b>. 
-            I excel at cross-functional collaboration and translating complex business requirements into intuitive user experiences while implementing CI/CD workflows and real-time data processing. 
-            My expertise spans <b>API orchestration</b>, <b>database optimization</b>, and <b>emerging technologies</b> that position me at the forefront of 2025's software development landscape.
-            </p>
-
-            {/* Skills section */}
-            <div className="mb-8">
-              <h4 className="text-lg font-semibold text-white mb-4">
-                Technical Skills
-              </h4>
-              <div className="flex flex-wrap gap-3">
-                {skills.map((skill, index) => (
-                  <span
-                    key={index}
-                    className="px-4 py-2 bg-gray-800 text-gray-200 rounded-md text-sm font-medium border border-gray-700"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* Info cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-gray-900 rounded-lg p-5 border border-gray-700">
-                <div className="flex items-center mb-3">
-                  <div className="p-2 bg-gray-200 rounded-lg mr-3">
-                    <FaUserGraduate className="text-gray-300" />
-                  </div>
-                  <h5 className="font-semibold text-gray-200">Education</h5>
-                </div>
-                <p className="text-gray-400 text-sm">
-                  Master's in Computer Applications from <b>Trident Academy of Creative Technology</b>
-                </p>
-              </div>
-
-              <div className="bg-gray-900 rounded-lg p-5 border border-gray-700">
-                <div className="flex items-center mb-3">
-                  <div className="p-2 bg-gray-200 rounded-lg mr-3">
-                    <FaCode className="text-gray-300" />
-                  </div>
-                  <h5 className="font-semibold text-gray-200">Domain</h5>
-                </div>
-                <p className="text-gray-400 text-sm">
-                  Software Development (Web and Application Development)
-                </p>
-              </div>
-
-              <div className="bg-gray-900 rounded-lg p-5 border border-gray-700">
-                <div className="flex items-center mb-3">
-                  <div className="p-2 bg-gray-200 rounded-lg mr-3">
-                    <FaBriefcase className="text-gray-300" />
-                  </div>
-                  <h5 className="font-semibold text-gray-200">Experience</h5>
-                </div>
-                <p className="text-gray-400 text-sm">
-                  Worked on 25+ projects in software development
-                </p>
-              </div>
-            </div>
-          </motion.div>
+        {/* Content Paragraphs */}
+        <div className="max-w-3xl mx-auto">
+          <div className="space-y-10 text-gray-400 text-lg md:text-xl font-medium leading-relaxed">
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            >
+              I'm a Full-Stack Developer focused on building modern web applications with React, Node.js, 
+              MongoDB, and Next.js. I enjoy architecting scalable digital ecosystems and turning ideas into 
+              reliable, user-focused products.
+            </motion.p>
+            
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            >
+              My work spans AI/GenAI, cloud-native systems, microservices, DevSecOps methodologies, 
+              containerized deployment pipelines, and real-time data processing.
+            </motion.p>
+            
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            >
+              I'm currently pursuing a Master's in Computer Applications at Trident Academy of Creative Technology, 
+              specializing in full-stack development and cloud-native solutions.
+            </motion.p>
+          </div>
         </div>
+
+        {/* Modern Minimalist Stats / Info */}
+        <div className="max-w-[75rem] mx-auto mt-32">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-6 border-t border-white/10 pt-12">
+            
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="flex flex-col"
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <FaUserGraduate className="text-white text-xl" />
+                <h4 className="text-white font-bold text-xl uppercase tracking-widest">Education</h4>
+              </div>
+              <p className="text-gray-500 font-medium">Master's in Computer Applications from Trident Academy of Creative Technology</p>
+            </motion.div>
+
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="flex flex-col"
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <FaCode className="text-white text-xl" />
+                <h4 className="text-white font-bold text-xl uppercase tracking-widest">Domain</h4>
+              </div>
+              <p className="text-gray-500 font-medium">Software Development, Full-Stack Architecture, & Cloud-Native Engineering</p>
+            </motion.div>
+
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.7 }}
+              className="flex flex-col"
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <FaBriefcase className="text-white text-xl" />
+                <h4 className="text-white font-bold text-xl uppercase tracking-widest">Experience</h4>
+              </div>
+              <p className="text-gray-500 font-medium">Delivered 25+ software development projects with a focus on modern web tech.</p>
+            </motion.div>
+
+          </div>
+        </div>
+
       </div>
     </section>
   );
 };
 
 export default About;
-                

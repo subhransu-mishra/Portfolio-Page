@@ -130,10 +130,10 @@ function App() {
     <div className="bg-black text-white min-h-screen">
       <Home />
       <About />
-      <Education />
+      {/* <Education /> */}
       <Service/>
       <Skills />
-      <Experience />
+      {/* <Experience /> */}
       <Projects />
       <Contact />
       <Footer />

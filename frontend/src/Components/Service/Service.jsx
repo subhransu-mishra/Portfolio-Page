@@ -1,9 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
+import ShaderBackground from "./ShaderBackground";
 
 const Marquee = () => {
   return (
-    <div className="relative w-full overflow-hidden py-16 bg-black flex">
+    <div className="relative w-full overflow-hidden py-16 bg-transparent flex">
       <motion.div
         className="flex whitespace-nowrap"
         animate={{ x: ["0%", "-50%"] }}
@@ -36,7 +37,7 @@ const Marquee = () => {
 
 const ServiceCard = ({ number, title, tags, colorClass, abstractType }) => {
   return (
-    <div className="group relative w-full max-w-[1100px] mx-auto rounded-[40px] md:rounded-full border border-white/10 bg-[#0a0a0a] p-4 flex flex-col md:flex-row items-center justify-between transition-transform duration-500 hover:scale-[1.01] hover:border-white/20 hover:shadow-2xl hover:shadow-white/5">
+    <div className="group relative w-full max-w-[1100px] mx-auto rounded-[40px] md:rounded-full border border-white/10 bg-[#0a0a0a] p-4 flex flex-col md:flex-row items-center justify-between transition-transform duration-500 hover:scale-[1.01] hover:border-white/20 hover:shadow-2xl hover:shadow-white/5  hover:border-orange-500 hover:border-4 hover:transition-ease-in-out-back">
       {/* Left Content */}
       <div className="flex-1 py-10 px-8 md:py-16 md:px-20 w-full">
         <div className="flex items-center space-x-4 mb-6 text-gray-400 text-sm md:text-base font-medium">
@@ -132,20 +133,24 @@ const Service = () => {
   ];
 
   return (
-    <section className="bg-black py-10 pb-32 min-h-screen" id="services_section">
-      <Marquee />
+    <section className="bg-black py-10 pb-32 min-h-screen relative overflow-hidden" id="services_section">
+      <ShaderBackground />
       
-      <div className="max-w-[1400px] mx-auto px-4 md:px-8 mt-20 space-y-10">
-        {services.map((service, index) => (
-          <ServiceCard
-            key={index}
-            number={service.number}
-            title={service.title}
-            tags={service.tags}
-            colorClass={service.colorClass}
-            abstractType={service.abstractType}
-          />
-        ))}
+      <div className="relative z-10">
+        <Marquee />
+        
+        <div className="max-w-[1400px] mx-auto px-4 md:px-8 mt-20 space-y-10">
+          {services.map((service, index) => (
+            <ServiceCard
+              key={index}
+              number={service.number}
+              title={service.title}
+              tags={service.tags}
+              colorClass={service.colorClass}
+              abstractType={service.abstractType}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
